@@ -103,11 +103,14 @@ XUẤT: blueprint 13 section + copy từng section.
 ─────────────────────────────────────────────────────────────
 B6 · XUẤT FILE HTML   (MODE 2, giao hàng)
 1 file .html single-file, mở trình duyệt là chạy, mobile-first 360-430px.
-  - Design System Paris v3.0: --blue #2A52BE · #ED2E38 · #FFFFFF
-    · blue-dark #224298 · secondary #6382D6 · accent #A4B3DD
-    · soft bg #EDF0F7 · danger #C3131C · text #1D2939 · sub #667085
-    Tỷ lệ 80 trắng / 15 xanh / 5 đỏ. KHÔNG đỏ trên nền xanh.
-  - MỘT font Bricolage Grotesque (w400-800), nạp link Google Fonts chuẩn
+  - KHUNG TRANG chuẩn theo np-khung-landing.md — chép đúng, chỉ thay <section>:
+    nền #DCE3EE · container .device-shell 460px · topbar logo · tricolor
+    · section xen kẽ trắng/kem · footer navy + khối pháp lý · sticky CTA
+  - Design System Paris v3.1: --blue #2A52BE · --blue-deep #0C1D4D
+    · --red #ED2E38 · --red-dark #C11B26 · --cream #FBF8F3 · --ink #131A2E
+    · --ink-soft #4A5270 · --line #E4E1D8 · --radius 22px
+    Tỷ lệ 80 trắng/kem / 15 xanh / 5 đỏ. KHÔNG đỏ trên nền xanh.
+  - HAI font: heading Bricolage Grotesque 700, body Be Vietnam Pro
   - Body >=16px · vùng chạm >=44px · sticky CTA đáy · form 2 trường type=tel
   - Ảnh chưa có → Ô ẢNH TẠM viền đứt, ghi rõ nội dung ảnh cần cấp.
     TUYỆT ĐỐI không ảnh stock/AI, không <img> trỏ URL không tồn tại.
@@ -138,7 +141,7 @@ Chạy quy trình trọn gói cho ZONE [Trồng răng Implant], ngân sách [200
 đích cuối [landing cho nhóm sợ đau + sợ đào thải trụ].
 B1 bộ từ khóa theo chân dung → B2 xếp ưu tiên + cổng WIN → B3 insight + câu nói
 thật của khách → B4 mẫu Google Ads chấm >=10/12 → B5 layout 13 section
-message-match với B4 → B6 file HTML Design System v3.0.
+message-match với B4 → B6 file HTML đúng khung trang + Design System v3.1.
 Dừng sau B2, B4, B5. Tuân np-rao-phap-ly.md. Bắt đầu từ B1.
 ```
 
@@ -180,7 +183,8 @@ Mỗi bước chỉ được dùng thứ bước trước đã sinh. Thiếu m�
 **Kỹ thuật**
 - [ ] Mobile-first 360–430px · body ≥16px · vùng chạm ≥44px
 - [ ] Sticky CTA đáy · form 2 trường `type="tel"`
-- [ ] Màu đúng v3.0 · một font Bricolage Grotesque · không đỏ trên nền xanh
+- [ ] Màu đúng v3.1 · heading Bricolage + body Be Vietnam Pro · không đỏ trên nền xanh
+- [ ] **Khung trang** đúng mẫu `family-care.html`: nền `#DCE3EE` · container 460px · footer navy + pháp lý · sticky khớp 460px
 - [ ] Ô ảnh tạm đúng mẫu · có bảng kê ảnh cần cấp
 
 **Pháp lý** — một dòng không đạt là chặn phát hành

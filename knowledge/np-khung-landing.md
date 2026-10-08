@@ -77,9 +77,9 @@ Paris có sẵn **công cụ kiểm tra online**: Kiểm tra răng miệng · ki
 
 ```css
 .ph{display:grid;place-content:center;gap:6px;text-align:center;margin:0;padding:16px;
-    aspect-ratio:var(--ar,16/9);background:#EDF0F7;border:2px dashed #6382D6;
+    aspect-ratio:var(--ar,16/9);background:var(--blue-light,#EAF0FC);border:2px dashed var(--blue-mid,#D7E2FA);
     border-radius:16px;color:#667085;font-size:14px;line-height:1.45}
-.ph b{display:block;font-weight:600;color:#2A52BE}
+.ph b{display:block;font-weight:600;color:var(--blue,#2A52BE)}
 ```
 
 ```html
@@ -104,63 +104,186 @@ Paris có sẵn **công cụ kiểm tra online**: Kiểm tra răng miệng · ki
 
 ---
 
-## Design System Paris v3.0 — chuẩn giao hàng HTML
+## Design System Paris v3.1 — chuẩn giao hàng HTML
 
-### Màu — dẫn xuất từ Bộ nhận diện thương hiệu (mục 4.1)
-Ba màu gốc không được đổi: **Cerulean Blue `#2A52BE`** · **Pantone Red 032 C `#ED2E38`** · **White `#FFFFFF`**.
+**Trang mẫu chuẩn: `https://nhakhoaparis.vn/family-care.html`** (bản lưu: `template/family-care.html`).
+Token và khung trang dưới đây lấy **nguyên** từ trang đó — không tự chế biến thể mới.
 
-| Vai trò | Mã | Dùng cho |
+### Token màu
+
+```css
+:root{
+  --blue:#2A52BE; --blue-dark:#152F73; --blue-deep:#0C1D4D;
+  --blue-light:#EAF0FC; --blue-mid:#D7E2FA;
+  --red:#ED2E38;  --red-dark:#C11B26;  --red-light:#FDEAEB;
+  --cream:#FBF8F3; --paper:#FFFFFF;
+  --ink:#131A2E;   --ink-soft:#4A5270;
+  --gold:#C9A24B;  --line:#E4E1D8;
+  --radius:22px;
+  --shadow-soft:0 18px 40px -18px rgba(12,29,77,.28);
+  --shadow-card:0 10px 30px -12px rgba(19,26,46,.18);
+}
+```
+
+`--blue` và `--red` chính là hai màu gốc của bộ nhận diện (mục 4.1); phần còn lại là biến thể đã chạy thật trên production.
+
+| Luật | |
+|---|---|
+| **Tỷ lệ** | 80% trắng/kem · 15% xanh · 5% đỏ. **Không nền toàn xanh** |
+| **Nền trang** | `#DCE3EE` — xám xanh, để khối trắng ở giữa nổi lên như một thẻ |
+| **Nút đỏ** | Chữ trắng trên `--red` chỉ đạt 4,16:1 → chữ **≥16px đậm**. Chữ đỏ cỡ nhỏ dùng `--red-dark` (6,08 AA) |
+| ⛔ **Cấm** | Đỏ trên nền xanh (1,66:1) · `--gold` trên nền trắng (2,40:1 — chỉ dùng trên navy, 6,74 AA) |
+
+### Khung trang — nền, container, header, footer, sticky
+
+Mọi LDP dùng **đúng bộ khung này**, chỉ thay phần `<section>` ở giữa.
+
+```css
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;font-family:'Be Vietnam Pro',sans-serif;color:var(--ink);
+     background:#DCE3EE;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+
+/* container: thẻ trắng khổ điện thoại, căn giữa trên nền xám xanh */
+.device-shell{max-width:460px;margin:0 auto;background:var(--paper);min-height:100vh;
+  position:relative;overflow:hidden;
+  box-shadow:0 0 0 1px rgba(12,29,77,.06),0 40px 80px -30px rgba(12,29,77,.35)}
+
+/* header */
+.topbar{display:flex;align-items:center;justify-content:center;
+  padding:8px 18px;background:#fff;position:relative;z-index:5}
+.logo-slot{display:flex;align-items:center;justify-content:center;width:120px}
+.logo-slot.compact{width:90px}
+.logo-slot.on-dark{filter:brightness(0) invert(1)}
+.logo-slot img{width:100%;height:auto;aspect-ratio:300/121;display:block}
+
+/* dải cờ Pháp — đặt ngay dưới hero */
+.tricolor{height:5px;display:flex;width:100%}
+.tricolor span{flex:1}
+.tricolor span:nth-child(1){background:var(--blue)}
+.tricolor span:nth-child(2){background:#fff}
+.tricolor span:nth-child(3){background:var(--red)}
+
+/* section: nền xen kẽ trắng / kem */
+section{padding:46px 22px;position:relative}
+.bg-white{background:#fff}
+.bg-cream{background:var(--cream)}
+.sec-title{font-size:23px;font-weight:700;line-height:1.32;
+  color:var(--blue-deep);margin:0 0 20px;text-align:center}
+
+/* footer: khối navy + khối pháp lý */
+.footer{padding:36px 22px 24px;text-align:center}
+.bg-navy{background:linear-gradient(180deg,var(--blue-deep),#0A1840);color:#fff}
+.footer .tagline{font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  font-weight:700;color:#AFC2F2;margin-bottom:18px}
+.footer-hotline{display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);
+  padding:10px 18px;border-radius:100px;font-weight:800;font-size:15px;margin-bottom:20px}
+.footer-hotline svg{width:16px;height:16px;color:var(--red)}
+.footer-branches{font-size:12px;color:#9FB1DE;line-height:1.9;max-width:300px;margin:0 auto 22px}
+.legal{background:#0A1840;color:#9FB1DE;font-family:Arial,Helvetica,sans-serif;
+  font-size:11.5px;line-height:1.7;text-align:center;padding:4px 22px 110px} /* 110px chừa chỗ sticky */
+.legal .policy{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 10px;margin-bottom:8px}
+.legal .policy a{color:#ADEAFF}
+.legal .policy a:not(:last-child)::after{content:"|";color:rgba(255,255,255,.3);margin-left:10px}
+.legal p{margin:0 0 2px}
+
+/* sticky CTA */
+.sticky-bar{position:fixed;bottom:0;left:50%;transform:translate(-50%,0);
+  width:100%;max-width:460px;display:flex;align-items:center;justify-content:space-between;
+  gap:12px;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);
+  border-top:1px solid var(--line);padding:11px 16px;z-index:20;
+  box-shadow:0 -10px 30px -14px rgba(12,29,77,.3);transition:transform .35s ease}
+.sticky-bar.hide{transform:translate(-50%,100%)}
+.sticky-cta{display:flex;align-items:center;gap:7px;background:var(--red);color:#fff;
+  font-weight:800;font-size:13.5px;padding:12px 18px;border-radius:12px;border:none;
+  white-space:nowrap;box-shadow:0 10px 20px -8px rgba(237,46,56,.55)}
+```
+
+```html
+<body>
+<div class="device-shell" id="top">
+
+  <div class="topbar">
+    <div class="logo-slot"><img src="LOGO.png" alt="Nha khoa Paris" width="120" height="48"></div>
+  </div>
+
+  <div class="hero"><!-- ảnh hero full-width, fetchpriority="high" --></div>
+  <div class="tricolor"><span></span><span></span><span></span></div>
+
+  <!-- ===== phần thay đổi theo từng LDP: các <section> xen kẽ bg-white / bg-cream ===== -->
+  <section class="bg-cream"><h2 class="sec-title">TIÊU ĐỀ SECTION</h2>…</section>
+  <section class="bg-white">…</section>
+  <!-- ===== hết phần thay đổi ===== -->
+
+  <div class="footer bg-navy">
+    <div class="logo-slot on-dark" style="margin:0 auto 16px"><img src="LOGO.png" alt="" width="120" height="48"></div>
+    <p class="tagline">HỆ THỐNG CHUỖI NHA KHOA UY TÍN TẠI VIỆT NAM</p>
+    <a href="tel:0943776699" class="footer-hotline">Hotline: 0943.776.699</a>
+    <p class="footer-branches">Cơ sở: Hà Nội - Hải Phòng - Vinh - Đà Nẵng - TP.HCM - Quảng Ninh - Bình Dương</p>
+  </div>
+
+  <div class="legal">
+    <div class="policy">
+      <a href="https://nhakhoaparis.vn/chinh-sach-bao-mat-thong-tin-khach-hang-tai-nha-khoa-paris">Chính sách bảo mật</a>
+      <a href="https://nhakhoaparis.vn/chinh-sach-noi-dung">Chính sách nội dung</a>
+      <a href="https://nhakhoaparis.vn/dieu-khoan-su-dung">Điều khoản sử dụng</a>
+    </div>
+    <p>Công ty Cổ phần Nha khoa Paris</p>
+    <p>Trụ sở chính: Tầng 1 + Tầng 2, số 12 phố Thái Thịnh, Phường Đống Đa, Thành phố Hà Nội, Việt Nam</p>
+    <p>Mã số doanh nghiệp: 0111123127</p>
+    <p>Giấy phép hoạt động khám bệnh, chữa bệnh số: 2032/HNO-GPHĐ/CL1 do Sở Y tế TP. Hà Nội cấp ngày 23/10/2025</p>
+    <p>Chịu trách nhiệm nội dung: Công ty Cổ phần Nha khoa Paris</p>
+  </div>
+
+  <div class="sticky-bar" id="stickyBar">
+    <div class="logo-slot compact"><img src="LOGO.png" alt="" width="90" height="36"></div>
+    <button class="sticky-cta" onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})">ĐẶT LỊCH NGAY</button>
+  </div>
+
+</div>
+</body>
+```
+
+**Luật khung trang**
+- Khối pháp lý `.legal` có `padding-bottom:110px` — **chừa chỗ cho sticky bar**, bỏ đi là chữ bị che.
+- `.sticky-bar` phải cùng `max-width:460px` với `.device-shell`, nếu không sẽ lệch trên desktop.
+- Sticky mặc định là **logo + 1 CTA đỏ**. Cần nút gọi thì thay logo bằng nút gọi viền xanh, **không nhồi 3 thứ**.
+- Dải `.tricolor` đặt ngay dưới hero, **không lặp lại** ở giữa trang.
+- Thông tin pháp lý trong `.legal` là **bắt buộc**, chép đúng nguyên văn, không rút gọn.
+
+### Typography — hai font
+
+| Vai trò | Font | Weight |
 |---|---|---|
-| **Primary** (`--blue`) | `#2A52BE` | **Cerulean Blue — bộ NDTH.** Nền nút chính · heading trên nền trắng |
-| Primary dark | `#224298` | Hover / active của nút chính |
-| Secondary | `#6382D6` | Viền · icon · nền phụ. **Không đặt chữ nhỏ lên** (3.7:1) |
-| Accent | `#A4B3DD` | Đường kẻ · nền nhạt · biểu đồ. **Không dùng cho chữ** |
-| Soft BG | `#EDF0F7` | Nền section nhạt |
-| **Highlight** | `#ED2E38` | **Pantone Red 032 C — bộ NDTH.** CTA phụ · nhãn ưu đãi · giá cỡ lớn |
-| Danger | `#C3131C` | Đỏ sâu: chữ đỏ cỡ nhỏ · lỗi form |
-| Soft Red | `#FACFD1` | Nền badge ưu đãi |
-| Nền | `#FFFFFF` | **White — bộ NDTH** |
-| Text | `#1D2939` | |
-| Sub text | `#667085` | |
-| Border | `#E4E7EC` | |
-
-**Tỷ lệ bắt buộc: 80% trắng / 15% xanh / 5% đỏ** — cảm hứng cờ Pháp. **Không nền toàn xanh.**
-- **Gradient xanh chủ đạo:** `linear-gradient(135deg, #2A52BE 0%, #5273CE 55%, #2A52BE 100%)`
-- **Text giá:** `#ED2E38` khi cỡ ≥ 18,66px đậm · `#C3131C` khi nhỏ hơn (để đạt AA)
-- **Nhấn trên nền xanh:** `#FFFFFF` — trắng là màu thứ ba của bộ NDTH
-- ⛔ **Không đặt đỏ `#ED2E38` lên nền xanh `#2A52BE`** — tương phản 1,66:1, chữ gần như biến mất
-
-### Typography
-Một font cho cả hệ: **`Bricolage Grotesque`** — variable, **hỗ trợ tiếng Việt đầy đủ** (gồm `₫`).
+| `h1` `h2` `h3` `.serif` | **Bricolage Grotesque** | 700 |
+| Toàn bộ body, nút, form | **Be Vietnam Pro** | 400 · 600 · 700 · 800 |
 
 ```html
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap" rel="stylesheet">
 ```
 
-| Vai trò | Weight | Ghi chú |
-|---|---|---|
-| H1 · H2 | **800** | line-height 110–120% |
-| H3 · H4 | **700** | |
-| Sub-heading · nhãn · chữ trên nút | **600** | |
-| Body nhấn · số liệu | **500** | |
-| Body | **400** | **≥ 16px trên mobile** |
+```css
+h1,h2,h3,.serif{font-family:'Bricolage Grotesque','Be Vietnam Pro',sans-serif;font-weight:700}
+```
 
-- `font-optical-sizing: auto` · line-height **150%** cho body, **110–120%** cho H1/H2.
-- Fallback: `"Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif`.
-- **Không** nạp thêm font thứ hai. Cần nhấn thì đổi weight, không đổi typeface.
+- Body **≥16px** trên mobile. Line-height 150% body, 1.32 cho `.sec-title`.
+- Fallback của heading là Be Vietnam Pro — font tải chậm thì chữ vẫn đúng tiếng Việt.
+- **Không nạp font thứ ba.** Cần nhấn thì đổi weight.
 
 ### Layout
-- Card radius **16–24px** · button radius **999px** hoặc **14px**
-- **Shadow rất nhẹ** · khoảng trắng lớn
-- CTA nổi bật sau mỗi 2–3 section
-- **Mobile-first**, single-file HTML
+- Card radius **22px** (`--radius`) · button radius **12px** · shadow dùng `--shadow-soft` / `--shadow-card`
+- `section` padding **46px 22px** · tiêu đề section căn giữa
+- Nền section **xen kẽ** `bg-white` ↔ `bg-cream`
+- Mobile-first, single-file HTML, khung thiết kế 360–430px
 
 ### Phong cách
 Apple + Airbnb + Stripe + Medical Premium + chuẩn Pháp.
 
-**Không:** nền tối · quá 3 màu chính · gradient/neon mạnh · nhiều style icon lẫn lộn · card nhiều shadow · animation rối.
+**Không:** nền tối toàn trang · quá 3 màu chính · gradient/neon mạnh · nhiều style icon lẫn lộn · card nhiều shadow · animation rối.
 
 ---
 

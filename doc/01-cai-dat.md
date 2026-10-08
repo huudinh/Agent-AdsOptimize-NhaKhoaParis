@@ -47,9 +47,9 @@ Tối ưu quảng cáo nha khoa: sinh mẫu QC từ từ khóa, dựng landing p
 
 | Nền tảng | Dán vào Instructions | Upload lên Knowledge |
 |---|---|---|
-| **ChatGPT** | `SYSTEM-PROMPT-NGAN.md` (7.976) | 8 file `knowledge/` **+ `SYSTEM-PROMPT.md`** |
-| **Gemini** | `SYSTEM-PROMPT.md` (19.690) | 8 file `knowledge/` |
-| **Claude** | `SYSTEM-PROMPT.md` (19.690) | 8 file `knowledge/` |
+| **ChatGPT** | `SYSTEM-PROMPT-NGAN.md` (7.959) | 8 file `knowledge/` **+ `SYSTEM-PROMPT.md`** |
+| **Gemini** | `SYSTEM-PROMPT.md` (20.711) | 8 file `knowledge/` |
+| **Claude** | `SYSTEM-PROMPT.md` (20.711) | 8 file `knowledge/` |
 
 ---
 
@@ -62,7 +62,7 @@ Tối ưu quảng cáo nha khoa: sinh mẫu QC từ từ khóa, dựng landing p
 | `np-chan-dung-hanh-trinh.md` | 3 rào cản đặc thù nha khoa · phễu 6 giai đoạn |
 | `np-cong-win-tu-khoa.md` | Cổng 2/3 · phiếu chấm · gom nhóm |
 | `np-engine-win-ad.md` | B1–B7 · 8 archetype · ma trận A/B · chấm 12 · template QC |
-| `np-khung-landing.md` | Khung LDP A/B · Design System Paris v3.0 · micro-conversion |
+| `np-khung-landing.md` | Khung LDP A/B · khung trang chuẩn · Design System v3.1 · micro-conversion |
 | `np-chan-doan-chi-so.md` | WIN bằng số · bảng chẩn đoán · thư viện hook |
 
 Thứ tự đọc: **pháp lý trước, dữ liệu sau.**

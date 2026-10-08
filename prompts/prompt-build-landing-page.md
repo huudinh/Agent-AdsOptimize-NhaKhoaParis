@@ -11,6 +11,7 @@ Nguồn nội dung: **sheet 4 "Hành trình KH"** của workbook zone (`out/NKP 
 | ✅ Lấy từ trang tham chiếu | ❌ Không lấy |
 |---|---|
 | Cách trình bày trên mobile: nhịp section, mật độ chữ, kích thước nút | **Khung nội dung.** Trang này đang chạy AIDA. Phần lớn LP của zone Implant phải là **PAS** vì xuất phát từ nỗi đau mất răng |
+| — | **Khung trang** (header/footer/container) lấy từ `family-care.html`, không lấy từ trang này |
 | Giọng thương hiệu, cách gọi tên dịch vụ | **Thứ tự section.** Thứ tự lấy từ `np-khung-landing.md` theo loại A/B |
 | Cách hiển thị giá dạng card "Chỉ từ X triệu" | **Con số cứng.** Giá · số ca · năm kinh nghiệm · bảo hành đều là dữ liệu động, đọc lại lúc chạy |
 | Cách chia before-after theo mức độ mất răng | **Danh sách bác sĩ.** Chỉ dùng tên có trong `np-ho-so-thuong-hieu.md` |
@@ -48,7 +49,7 @@ ZONE:     [Trồng răng Implant]  (file: zones/implant.json)
   4. Sheet 2 — lọc cột Landing page = mã landing này. Đọc toàn bộ cột
      Từ khoá và cột Thông điệp / CTA chính. Trang phải trả lời ĐÚNG
      những câu khách đang gõ, bằng ĐÚNG thông điệp đã cam kết trên quảng cáo.
-  5. knowledge/np-khung-landing.md   - 13 section loại A/B, Design System v3.0
+  5. knowledge/np-khung-landing.md   - 13 section A/B, Design System v3.1, KHUNG TRANG
   6. knowledge/np-ho-so-thuong-hieu.md - USP, đối tác hãng, bác sĩ, công nghệ
   7. knowledge/np-rao-phap-ly.md     - từ cấm, luật chữ "chính hãng"
   8. https://nhakhoaparis.vn/trong-rang-implant-paris.html
@@ -84,8 +85,8 @@ QUY TẮC MOBILE (đây là mặc định, không phải tuỳ chọn):
   - CHƯA CÓ ẢNH THẬT -> dựng Ô ẢNH TẠM, tuyệt đối không chèn ảnh stock/AI
     và không trỏ <img> tới URL không tồn tại. Mẫu bắt buộc:
       .ph{display:grid;place-content:center;gap:6px;text-align:center;margin:0;
-          padding:16px;aspect-ratio:var(--ar,16/9);background:#EDF0F7;
-          border:2px dashed #6382D6;border-radius:16px;color:#667085;
+          padding:16px;aspect-ratio:var(--ar,16/9);background:var(--blue-light);
+          border:2px dashed var(--blue-mid);border-radius:16px;color:var(--ink-soft);
           font-size:14px;line-height:1.45}
       .ph b{display:block;font-weight:600;color:#2A52BE}
       <figure class="ph" style="--ar:16/9">
@@ -99,19 +100,33 @@ QUY TẮC MOBILE (đây là mặc định, không phải tuỳ chọn):
   - Không hover-only: mọi thứ phải dùng được bằng ngón tay.
   - Tổng trang mục tiêu < 500KB, không framework, CSS inline trong file.
 
-DESIGN SYSTEM PARIS v3.0 (bắt buộc — dẫn xuất từ bộ NDTH mục 4.1):
-  - 3 màu gốc: Cerulean Blue #2A52BE · Pantone Red 032 C #ED2E38 · White #FFFFFF
-  - Thang số: --blue #2A52BE · blue-dark #224298 · secondary #6382D6
-    · accent #A4B3DD · soft bg #EDF0F7 · highlight #ED2E38 · danger #C3131C
-    · text #1D2939 · sub #667085 · border #E4E7EC
-  - Tỷ lệ 80% trắng / 15% xanh / 5% đỏ. KHÔNG nền toàn xanh, không nền tối.
-  - Text giá #ED2E38 khi >=18,66px đậm, #C3131C khi nhỏ hơn.
-    Nhấn trên nền xanh #FFFFFF. KHÔNG đặt đỏ lên nền xanh (tương phản 1,66:1).
-  - MỘT font duy nhất: Bricolage Grotesque (variable, đủ tiếng Việt + ký tự đồng).
-    Nạp đúng link Google Fonts dưới đây, không nạp font thứ hai:
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
-    H1/H2 w800 · H3/H4 w700 · nhãn và nút w600 · body nhấn w500 · body w400 >=16px.
-    font-optical-sizing: auto. Line-height 150% body, 110-120% heading lớn.
+DESIGN SYSTEM PARIS v3.1 — lấy nguyên từ trang production family-care.html:
+  --blue #2A52BE · --blue-dark #152F73 · --blue-deep #0C1D4D
+  --blue-light #EAF0FC · --blue-mid #D7E2FA
+  --red #ED2E38 · --red-dark #C11B26 · --red-light #FDEAEB
+  --cream #FBF8F3 · --paper #FFFFFF · --ink #131A2E · --ink-soft #4A5270
+  --gold #C9A24B · --line #E4E1D8 · --radius 22px · nền trang #DCE3EE
+  - Tỷ lệ 80% trắng/kem / 15% xanh / 5% đỏ. KHÔNG nền toàn xanh, không nền tối.
+  - Text giá #ED2E38 khi >=16px đậm, #C11B26 khi nhỏ hơn.
+  - KHÔNG đỏ trên nền xanh (1,66:1). KHÔNG --gold trên nền trắng (2,40:1).
+
+KHUNG TRANG (bắt buộc — chép đúng từ np-khung-landing.md, chỉ thay <section> giữa):
+  - body nền #DCE3EE · container .device-shell max-width 460px, nền trắng,
+    shadow, overflow hidden — trang hiện ra như một thẻ khổ điện thoại
+  - .topbar logo ở đầu · dải .tricolor (xanh/trắng/đỏ) ngay dưới hero
+  - section padding 46px 22px, nền XEN KẼ .bg-white / .bg-cream
+    .sec-title 23px/700, màu --blue-deep, căn giữa
+  - footer 2 khối: .footer.bg-navy (logo trắng + tagline + hotline pill
+    + dòng cơ sở) rồi .legal nền #0A1840 (3 link chính sách + 5 dòng pháp lý
+    nguyên văn), .legal padding-bottom 110px chừa chỗ sticky
+  - .sticky-bar fixed bottom, max-width 460px khớp container,
+    gồm logo compact + 1 nút CTA đỏ
+  - HAI font, đúng như trang production. Không nạp font thứ ba:
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap" rel="stylesheet">
+    body dùng Be Vietnam Pro; h1,h2,h3 dùng Bricolage Grotesque 700 với
+    fallback Be Vietnam Pro. Body >=16px. Line-height 150% body,
+    1.32 cho tiêu đề section.
   - Card radius 16-24px · button radius 999px hoặc 14px · shadow rất nhẹ.
 
 RÀNG BUỘC PHÁP LÝ — vi phạm là loại thẳng, không tính điểm:
@@ -142,7 +157,7 @@ kèm HAI bảng ở cuối output:
 MODE 2. Dựng [LP7] của zone [implant], mobile-first, single-file HTML.
 Lấy loại khung, chặng, chân dung, rào cản, nội dung, CTA, micro-conversion từ
 sheet 4 mục B. Lấy từ khoá và thông điệp đã hứa từ sheet 2 (lọc Landing page = LP7).
-Theo np-khung-landing.md + Design System Paris v3.0. Tuân np-rao-phap-ly.md.
+Theo np-khung-landing.md: khung trang chuẩn + Design System v3.1. Tuân np-rao-phap-ly.md.
 Giá và ưu đãi đọc động. Hỏi tôi copy-deck hay HTML trước khi viết.
 ```
 
@@ -231,6 +246,8 @@ Không viết code ở bước này.
 - [ ] Body ≥ 16px · vùng chạm ≥ 44px · không hover-only
 - [ ] Form 2 trường · `type="tel"` `inputmode="numeric"`
 - [ ] Bảng giá dạng card dọc · before-after dạng tab/swipe
+- [ ] **Khung trang đúng mẫu**: nền `#DCE3EE` · container 460px · tricolor · footer navy + khối pháp lý · sticky khớp 460px
+- [ ] Màu v3.1 · heading Bricolage + body Be Vietnam Pro · không đỏ trên nền xanh
 - [ ] Ảnh WebP có width/height · lazy-load từ section 3 · trang < 500KB
 - [ ] Ảnh chưa có → ô ảnh tạm đúng mẫu · **không có ảnh stock/AI**
 - [ ] Có **bảng kê ảnh cần cấp** ở cuối, ghi rõ nội dung và người duyệt

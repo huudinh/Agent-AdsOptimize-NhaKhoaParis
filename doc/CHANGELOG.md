@@ -76,6 +76,7 @@ Gói Paris có nhiều luật cứng hơn gói Kangnam — thêm luật "chính 
 - v1.1 — tích hợp Engine WIN (B1–B9) vào MODE 1/3 + cổng 2/3 tiêu chí (3.4).
 - v1.2 — bổ sung Nhận diện thương hiệu (logo · địa chỉ · màu) vào 3.3.
 - **v2.2** — Design System Paris **v3.0**: thay bảng màu bằng bộ nhận diện thương hiệu mục 4.1 (Cerulean Blue `#2A52BE` · Pantone Red 032 C `#ED2E38` · White), dẫn xuất thang phụ và kiểm WCAG; typography chuyển sang **một font `Bricolage Grotesque`** (bỏ Oxy Vietnam và SVN Rosellinda Alyamore). Thêm **MODE 4 — KEYWORD-ZONE** (§12) + knowledge `np-ppl-kh-trung-tam.md`. Chuẩn **ô ảnh tạm**: ảnh chưa có thì dựng khối viền đứt ghi rõ tỉ lệ và nội dung cần cấp, kèm **bảng kê ảnh cần cấp** cuối mỗi landing — thay cho ảnh stock/AI. Thêm `prompts/prompt-quy-trinh-tron-goi.md` — dây chuyền 6 bước nối MODE 4 → MODE 1 → MODE 2 với 3 chốt dừng và luật **message match**.
+- **v2.3** — Design System **v3.1**: token màu và **khung trang** (nền · container 460px · header · footer navy + khối pháp lý · sticky CTA) lấy nguyên từ trang production `family-care.html` (lưu tại `template/`). Typography sửa thành **hai font**: heading Bricolage Grotesque 700, body Be Vietnam Pro — khớp production, thay cho giả định một font ở v2.2.
 
 - v1.3 — chốt mã màu: gradient xanh, text giá `#ed2805`, nhấn trên nền xanh `#ffc229`.
 

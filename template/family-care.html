@@ -1,0 +1,1713 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Paris Family Care — Gói quà tặng chăm sóc răng miệng trọn vẹn cho gia đình: khám định kỳ, chụp X-quang, CT Cone-Beam, lấy cao răng, điều trị cơ bản và nhiều quyền lợi khác. Đăng ký ngay để nhận ưu đãi 7,5 triệu đồng.">
+  <meta name="theme-color" content="#0C1D4D">
+  <title>Paris Family Care — Chăm sóc nụ cười gia đình</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/cp/quyen-loi-thanh-vien/family-care/media/BRICOLAGEGROTESQUE-BOLD.woff2" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap"
+      rel="stylesheet">
+  </noscript>
+  <style>
+    @font-face {
+      font-family: 'Bricolage Grotesque';
+      src: url('media/BRICOLAGEGROTESQUE-BOLD.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --blue: #2A52BE;
+      --blue-dark: #152F73;
+      --blue-deep: #0C1D4D;
+      --blue-light: #EAF0FC;
+      --blue-mid: #D7E2FA;
+      --red: #ED2E38;
+      --red-dark: #C11B26;
+      --red-light: #FDEAEB;
+      --cream: #FBF8F3;
+      --paper: #FFFFFF;
+      --ink: #131A2E;
+      --ink-soft: #4A5270;
+      --gold: #C9A24B;
+      --line: #E4E1D8;
+      --radius: 22px;
+      --shadow-soft: 0 18px 40px -18px rgba(12, 29, 77, 0.28);
+      --shadow-card: 0 10px 30px -12px rgba(19, 26, 46, 0.18);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      color: var(--ink);
+      background: #DCE3EE;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1,
+    h2,
+    h3,
+    .serif {
+      font-family: 'Bricolage Grotesque', 'Be Vietnam Pro', sans-serif;
+      font-weight: 700;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ===== Phone frame wrapper (desktop preview) ===== */
+    .device-shell {
+      max-width: 460px;
+      margin: 0 auto;
+      background: var(--paper);
+      min-height: 100vh;
+      position: relative;
+      box-shadow: 0 0 0 1px rgba(12, 29, 77, 0.06), 0 40px 80px -30px rgba(12, 29, 77, 0.35);
+      overflow: hidden;
+    }
+
+    /* ===== decorative tricolor rule ===== */
+    .tricolor {
+      height: 5px;
+      display: flex;
+      width: 100%;
+    }
+
+    .tricolor span {
+      flex: 1;
+    }
+
+    .tricolor span:nth-child(1) {
+      background: var(--blue);
+    }
+
+    .tricolor span:nth-child(2) {
+      background: #fff;
+    }
+
+    .tricolor span:nth-child(3) {
+      background: var(--red);
+    }
+
+    /* ===== Logo placeholder — để trống, thay bằng logo thật khi bàn giao ===== */
+    .logo-slot {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 132px;
+    }
+
+    .logo-slot.on-dark {
+      filter: brightness(0) invert(1);
+    }
+
+    .logo-slot.compact {
+      width: 90px;
+    }
+
+    .logo-slot.large {
+      width: 120px;
+    }
+
+    .logo-slot img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 300 / 121;
+      display: block;
+    }
+
+    /* ===== Top bar ===== */
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 18px;
+      background: #fff;
+      position: relative;
+      z-index: 5;
+    }
+
+    .call-chip {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--blue-light);
+      color: var(--blue-dark);
+      font-weight: 700;
+      font-size: 12.5px;
+      padding: 8px 12px;
+      border-radius: 100px;
+      border: 1px solid var(--blue-mid);
+    }
+
+    .call-chip svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    /* ===== HERO — ảnh page1 full-width ===== */
+    .hero {
+      line-height: 0;
+    }
+
+    .hero img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* ===== Section wrapper ===== */
+    section {
+      padding: 46px 22px;
+      position: relative;
+    }
+
+    .bg-cream {
+      background: var(--cream);
+    }
+
+    .bg-white {
+      background: #fff;
+    }
+
+    .bg-navy {
+      background: linear-gradient(180deg, var(--blue-deep), #0A1840);
+      color: #fff;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 10px;
+    }
+
+    .kicker::before {
+      content: "";
+      width: 16px;
+      height: 2px;
+      background: var(--red);
+      border-radius: 2px;
+    }
+
+    .kicker.blue {
+      color: var(--blue);
+    }
+
+    .kicker.blue::before {
+      background: var(--blue);
+    }
+
+    .sec-title {
+      font-size: 23px;
+      font-weight: 700;
+      line-height: 1.32;
+      color: var(--blue-deep);
+      margin: 0 0 20px;
+      text-align: center;
+    }
+
+    .sec-title.on-dark {
+      color: #fff;
+    }
+
+    .sec-desc {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--ink-soft);
+      margin: 0 0 26px;
+      text-align: center;
+    }
+
+    /* ===== Gift ticket ===== */
+    .ticket {
+      position: relative;
+      background: linear-gradient(160deg, #fff, #FFF6F6);
+      border: 1.5px solid #F6C7CA;
+      border-radius: 24px;
+      padding: 26px 22px 24px;
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+    }
+
+    .ticket::before,
+    .ticket::after {
+      content: "";
+      position: absolute;
+      width: 26px;
+      height: 26px;
+      background: var(--cream);
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .ticket::before {
+      left: -13px;
+    }
+
+    .ticket::after {
+      right: -13px;
+    }
+
+    .ticket .perf {
+      border-top: 2px dashed #F0B7BA;
+      margin: 20px -6px;
+    }
+
+    .ticket p {
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--ink);
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .stat-row {
+      display: flex;
+      gap: 10px;
+      margin: 0;
+    }
+
+    .stat {
+      flex: 1;
+      text-align: center;
+      background: #fff;
+      border: 1px solid #F6C7CA;
+      border-radius: 14px;
+      padding: 12px 4px;
+    }
+
+    .stat b {
+      display: block;
+      font-family: 'Bricolage Grotesque', 'Be Vietnam Pro', sans-serif;
+      font-size: 19px;
+      color: var(--blue-deep);
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    .stat span {
+      font-size: 10px;
+      color: var(--ink-soft);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .check-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .check-list li {
+      display: flex;
+      gap: 10px;
+      font-size: 13.5px;
+      line-height: 1.55;
+      color: var(--ink);
+      align-items: flex-start;
+    }
+
+    .check-list li svg {
+      flex: none;
+      width: 19px;
+      height: 19px;
+      margin-top: 1px;
+    }
+
+    .check-list b {
+      color: var(--blue-dark);
+    }
+
+    .photo-slot {
+      border-radius: 16px;
+      border: 1.5px dashed #C9D5F2;
+      background: repeating-linear-gradient(135deg, var(--blue-light) 0 10px, #fff 10px 20px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      text-align: center;
+      padding: 20px 14px;
+      color: var(--blue-dark);
+    }
+
+    .photo-slot svg {
+      width: 30px;
+      height: 30px;
+      opacity: 0.7;
+    }
+
+    .photo-slot span {
+      font-size: 10.5px;
+      font-weight: 600;
+      line-height: 1.4;
+      max-width: 210px;
+    }
+
+    /* ===== Benefit cards ===== */
+    .benefit-card {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: var(--shadow-card);
+      border: 1px solid var(--line);
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+
+    .benefit-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 18px 14px;
+    }
+
+    .icon-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 13px;
+      flex: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .icon-badge svg {
+      width: 23px;
+      height: 23px;
+    }
+
+    .icon-badge.blue {
+      background: linear-gradient(150deg, var(--blue), var(--blue-dark));
+    }
+
+    .icon-badge.red {
+      background: linear-gradient(150deg, var(--red), var(--red-dark));
+    }
+
+    .icon-badge.navy {
+      background: linear-gradient(150deg, #2B3B6B, var(--blue-deep));
+    }
+
+    .benefit-head h4 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--blue-deep);
+    }
+
+    .benefit-photo {
+      margin: 0 18px;
+      height: 110px;
+      border-radius: 12px;
+    }
+
+    .benefit-body {
+      padding: 16px 18px 20px;
+    }
+
+    .benefit-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .benefit-table td {
+      padding: 11px 0;
+      font-size: 12.5px;
+      line-height: 1.5;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    .benefit-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .benefit-table td.name {
+      font-weight: 700;
+      color: var(--ink);
+      padding-right: 12px;
+      width: 56%;
+    }
+
+    .benefit-table td.value {
+      color: var(--ink-soft);
+      text-align: right;
+      width: 44%;
+    }
+
+    .benefit-table td.full {
+      color: var(--ink-soft);
+      font-weight: 600;
+      line-height: 1.6;
+      padding-top: 12px;
+    }
+
+    /* ===== Validity banner ===== */
+    .validity {
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue));
+      color: #fff;
+      border-radius: 18px;
+      padding: 16px 18px;
+      box-shadow: 0 14px 30px -16px rgba(21, 47, 115, 0.5);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .validity::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(115deg, rgba(255, 255, 255, 0.05) 0 2px, transparent 2px 30px);
+    }
+
+    .validity-top {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .validity-clock {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.16);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: none;
+      border: 1px solid rgba(255, 255, 255, 0.32);
+    }
+
+    .validity-clock svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .validity-text {
+      text-align: left;
+    }
+
+    .validity p.label {
+      font-size: 10px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #CFE0FF;
+      margin: 0;
+    }
+
+    .validity .dates {
+      font-family: 'Bricolage Grotesque', 'Be Vietnam Pro', sans-serif;
+      font-size: 14.5px;
+      font-weight: 700;
+      margin: 1px 0 0;
+    }
+
+    .validity .cta {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: #fff;
+      color: var(--blue-dark);
+      font-weight: 800;
+      font-size: 13.5px;
+      padding: 12px 18px;
+      border-radius: 11px;
+      border: none;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .validity .cta svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    /* ===== FAQ ===== */
+    .faq-item {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+
+    .faq-q {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 16px;
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+    }
+
+    .faq-q .qmark {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--blue-light);
+      color: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 13px;
+      flex: none;
+    }
+
+    .faq-q span {
+      flex: 1;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--blue-deep);
+      line-height: 1.4;
+    }
+
+    .faq-q .chev {
+      width: 18px;
+      height: 18px;
+      flex: none;
+      color: var(--ink-soft);
+      transition: transform .25s ease;
+    }
+
+    .faq-item.open .faq-q .chev {
+      transform: rotate(180deg);
+    }
+
+    .faq-item.open .faq-q .qmark {
+      background: var(--red);
+      color: #fff;
+    }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .3s ease;
+    }
+
+    .faq-a-inner {
+      padding: 0 16px 18px 54px;
+      font-size: 13.5px;
+      line-height: 1.65;
+      color: var(--ink-soft);
+    }
+
+    /* ===== Form ===== */
+    .form-card {
+      background: #fff;
+      border-radius: 22px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--line);
+      padding: 26px 20px;
+    }
+
+    .form-card .tag {
+      display: block;
+      width: fit-content;
+      margin: 0 auto 10px;
+      background: var(--red-light);
+      color: var(--red-dark);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      padding: 5px 11px;
+      border-radius: 100px;
+    }
+
+    .form-card h3 {
+      font-size: 21px;
+      font-weight: 700;
+      color: var(--blue-deep);
+      line-height: 1.3;
+      margin: 0 0 20px;
+      text-align: center;
+    }
+
+    .form-card h3 em {
+      font-style: normal;
+      color: var(--red);
+    }
+
+    .form-card p.tiny {
+      font-size: 13px;
+      color: var(--ink-soft);
+      margin: 0 0 20px;
+    }
+
+    .field {
+      margin-bottom: 14px;
+    }
+
+    .field label {
+      display: block;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--blue-deep);
+      margin-bottom: 6px;
+    }
+
+    .field .req {
+      color: var(--red);
+    }
+
+    .field input,
+    .field select {
+      width: 100%;
+      padding: 13px 14px;
+      border-radius: 12px;
+      border: 1.5px solid #DCE1EE;
+      font-size: 14.5px;
+      font-family: inherit;
+      color: var(--ink);
+      background: #FAFBFF;
+      transition: border-color .15s ease, background .15s ease;
+    }
+
+    .field input:focus,
+    .field select:focus {
+      outline: none;
+      border-color: var(--blue);
+      background: #fff;
+    }
+
+    .field input[aria-invalid="true"] {
+      border-color: var(--red);
+    }
+
+    .agree {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 13px 14px;
+      border-radius: 12px;
+      background: var(--blue-light);
+      border: 1.5px solid #DCE1EE;
+      cursor: pointer;
+      transition: border-color .15s ease;
+    }
+
+    .agree input {
+      width: 19px;
+      height: 19px;
+      flex: none;
+      margin-top: 1px;
+      accent-color: var(--blue);
+      cursor: pointer;
+    }
+
+    .agree span {
+      font-size: 12.3px;
+      line-height: 1.55;
+      color: var(--ink-soft);
+      font-weight: 500;
+    }
+
+    .agree a {
+      color: var(--blue);
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
+    .agree[aria-invalid="true"] {
+      border-color: var(--red);
+    }
+
+    .err {
+      display: none;
+      margin-top: 6px;
+      font-size: 12.5px;
+      color: var(--red);
+    }
+
+    .err.on {
+      display: block;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background: linear-gradient(135deg, var(--red), var(--red-dark));
+      color: #fff;
+      font-weight: 800;
+      font-size: 15.5px;
+      padding: 16px;
+      border: none;
+      border-radius: 14px;
+      margin-top: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 16px 30px -10px rgba(237, 46, 56, 0.5);
+    }
+
+    .submit-btn:disabled {
+      filter: grayscale(0);
+    }
+
+    .submit-btn svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .form-note {
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+      margin-top: 14px;
+      font-size: 11.5px;
+      color: var(--ink-soft);
+      line-height: 1.55;
+    }
+
+    .form-note svg {
+      width: 15px;
+      height: 15px;
+      flex: none;
+      margin-top: 1px;
+      color: var(--blue);
+    }
+
+    .done {
+      display: none;
+      text-align: center;
+      padding: 12px 0;
+    }
+
+    .done.on {
+      display: block;
+    }
+
+    .done svg {
+      width: 52px;
+      height: 52px;
+      margin: 0 auto;
+      stroke: #1DA160;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .done h3 {
+      margin-top: 14px;
+      font-size: 17.5px;
+      color: var(--blue);
+      text-transform: uppercase;
+    }
+
+    .done p {
+      margin-top: 8px;
+      font-size: 14px;
+      color: var(--ink-soft);
+      line-height: 1.55;
+    }
+
+    /* ===== Footer ===== */
+    .footer {
+      padding: 36px 22px 24px;
+      text-align: center;
+    }
+
+    .footer_pr_2_0_0__sub {
+      background: #0A1840;
+      color: #9FB1DE;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11.5px;
+      line-height: 1.7;
+      text-align: center;
+      /* 110px chừa chỗ cho thanh CTA cố định phía dưới */
+      padding: 4px 22px 110px;
+    }
+
+    .footer_pr_2_0_0__policy {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 4px 10px;
+      margin-bottom: 8px;
+    }
+
+    .footer_pr_2_0_0__policy a {
+      color: #ADEAFF;
+    }
+
+    .footer_pr_2_0_0__policy a:not(:last-child)::after {
+      content: "|";
+      color: rgba(255, 255, 255, .3);
+      margin-left: 10px;
+    }
+
+    .footer_pr_2_0_0__legal p {
+      margin-bottom: 2px;
+    }
+
+    .footer_pr_2_0_0__legal p:last-child {
+      margin-bottom: 0;
+    }
+
+    .footer_pr_2_0_0__company {
+      font-weight: 400;
+      text-transform: none;
+    }
+
+    .footer .tagline {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #AFC2F2;
+      margin-bottom: 18px;
+    }
+
+    .footer-hotline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 10px 18px;
+      border-radius: 100px;
+      font-weight: 800;
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    .footer-hotline svg {
+      width: 16px;
+      height: 16px;
+      color: var(--red);
+    }
+
+    .footer-branches {
+      font-size: 12px;
+      color: #9FB1DE;
+      line-height: 1.9;
+      max-width: 300px;
+      margin: 0 auto 22px;
+    }
+
+    .footer-branches b {
+      color: #DCE6FF;
+    }
+
+    .footer hr {
+      border: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      margin: 0 0 16px;
+    }
+
+    .footer .copy {
+      font-size: 10.5px;
+      color: #7A8CBE;
+    }
+
+    /* ===== Sticky bottom bar ===== */
+    .sticky-bar {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      width: 100%;
+      max-width: 460px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid var(--line);
+      padding: 11px 16px;
+      box-shadow: 0 -10px 30px -14px rgba(12, 29, 77, 0.3);
+      z-index: 20;
+      transform: translate(-50%, 0);
+      transition: transform .35s ease;
+    }
+
+    .sticky-bar.hide {
+      transform: translate(-50%, 100%);
+    }
+
+    .sticky-cta {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--red);
+      color: #fff;
+      font-weight: 800;
+      font-size: 13.5px;
+      padding: 12px 18px;
+      border-radius: 12px;
+      border: none;
+      box-shadow: 0 10px 20px -8px rgba(237, 46, 56, 0.55);
+      white-space: nowrap;
+    }
+
+    .sticky-cta svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    .reveal {
+      transition: opacity .6s ease, transform .6s ease;
+    }
+
+    .reveal:not(.in) {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ===== Below-the-fold content skipping (PageSpeed) ===== */
+    .ticket,
+    .benefit-card,
+    .form-card {
+      content-visibility: auto;
+      contain-intrinsic-size: auto 360px;
+    }
+
+    .faq-item {
+      content-visibility: auto;
+      contain-intrinsic-size: auto 60px;
+    }
+  </style>
+<meta name="robots" content="noindex,follow"/>	
+	<link rel="shortcut icon" type="image/x-icon" href="https://nhakhoaparis.vn/css/images/favicon.png?v=1">
+	</head>
+
+<body>
+  <div class="device-shell" id="top">
+
+    <!-- ===== TOP BAR — chỗ trống để chèn logo thật, không thêm nội dung khác ===== -->
+    <div class="topbar" style="justify-content:center;">
+      <div class="logo-slot large">
+        <img src="/cp/quyen-loi-thanh-vien/family-care/media/images/logo.png" alt="" width="120" height="48">
+      </div>
+    </div>
+
+    <!-- ===== HERO — ảnh page1 full-width ===== -->
+    <div class="hero">
+      <img src="/cp/quyen-loi-thanh-vien/family-care/media/images/page1.jpg" alt="" width="500" height="705" fetchpriority="high">
+    </div>
+    <div class="tricolor"><span></span><span></span><span></span></div>
+
+    <!-- ===== GIFT OFFER — text nguyên văn theo brief, ảnh minh họa đặt đúng vị trí theo note ===== -->
+    <section class="bg-cream reveal">
+      <h2 class="sec-title">QUÀ TẶNG ĐỒNG HÀNH<br>KHÁCH HÀNG THÂN THIẾT</h2>
+
+      <img src="/cp/quyen-loi-thanh-vien/family-care/media/images/page2.jpg" alt="" width="600" height="400"
+        style="display:block;width:100%;height:auto;border-radius:16px;margin-bottom:20px;">
+
+      <div class="ticket">
+        <p>Gói quà tặng chăm sóc trọn vẹn giúp gia đình bạn chủ động kiểm tra, theo dõi và bảo vệ sức khỏe răng miệng.
+        </p>
+
+        <div class="perf"></div>
+
+        <div class="stat-row" style="margin-bottom:20px;">
+          <div class="stat"><b>4</b><span>thành viên</span></div>
+          <div class="stat"><b>01</b><span>năm</span></div>
+          <div class="stat"><b>7,5</b><span>triệu</span></div>
+        </div>
+
+        <ul class="check-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="12" fill="#2A52BE" />
+              <path d="M7 12.5l3 3 7-7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span><b>Cả gia đình cùng được chăm sóc</b> — một gói quyền lợi cho tối đa 04 thành viên.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="12" fill="#2A52BE" />
+              <path d="M7 12.5l3 3 7-7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span><b>Chủ động kiểm tra định kỳ</b> — giúp phát hiện sớm các vấn đề răng miệng thường gặp.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="12" fill="#2A52BE" />
+              <path d="M7 12.5l3 3 7-7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span><b>An tâm theo dõi trong 01 năm</b> — Paris đồng hành cùng gia đình bạn trong suốt thời hạn sử dụng
+              gói.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== BENEFITS DETAIL — chỉ dùng đúng 3 tiêu đề cột theo brief, không thêm heading mới ===== -->
+    <section class="bg-white reveal" style="padding-top:38px;">
+      <div class="benefit-card">
+        <div class="benefit-head">
+          <div class="icon-badge blue">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+            </svg>
+          </div>
+          <h4>Quyền lợi Chăm sóc định kỳ</h4>
+        </div>
+        <img src="/cp/quyen-loi-thanh-vien/family-care/media/images/page3.jpg" alt="" width="600" height="400" class="benefit-photo"
+          style="width:calc(100% - 36px);height:auto;">
+        <div class="benefit-body">
+          <table class="benefit-table">
+            <tr>
+              <td class="name">Khám tổng quát &amp; tư vấn</td>
+              <td class="value">2 lần/người/năm.</td>
+            </tr>
+            <tr>
+              <td class="name">Chụp phim X-quang quanh chóp</td>
+              <td class="value">2 lần/người/năm.</td>
+            </tr>
+            <tr>
+              <td class="name">Chụp phim CT Cone-Beam</td>
+              <td class="value">4 lần/gói/năm, theo chỉ định bác sĩ.</td>
+            </tr>
+            <tr>
+              <td class="name">Lấy cao răng siêu âm</td>
+              <td class="value">2 lần/người/năm.</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-head">
+          <div class="icon-badge red">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M12 22s8-4.5 8-11.8A5.2 5.2 0 0 0 12 6a5.2 5.2 0 0 0-8 4.2C4 17.5 12 22 12 22z" />
+              <path d="M12 6V2" />
+            </svg>
+          </div>
+          <h4>Quyền lợi Điều trị cơ bản</h4>
+        </div>
+        <img src="/cp/quyen-loi-thanh-vien/family-care/media/images/page4.jpg" alt="" width="600" height="400" class="benefit-photo"
+          style="width:calc(100% - 36px);height:auto;">
+        <div class="benefit-body">
+          <table class="benefit-table">
+            <tr>
+              <td class="name">Nhổ răng sữa</td>
+              <td class="value">2 răng/gói/năm.</td>
+            </tr>
+            <tr>
+              <td class="name">Nhổ răng khôn mọc thẳng</td>
+              <td class="value">2 răng/gói/năm.</td>
+            </tr>
+            <tr>
+              <td class="name">Trám răng sâu cơ bản</td>
+              <td class="value">2 răng/gói/năm, áp dụng cho răng sâu xoang nhỏ, chưa ảnh hưởng tủy.</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-head">
+          <div class="icon-badge navy">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M20 12v7a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-7" />
+              <rect x="2" y="7" width="20" height="5" rx="1" />
+              <path d="M12 7v13M12 7c-1.5-3-6-3-6 0s4.5 0 6 0zM12 7c1.5-3 6-3 6 0s-4.5 0-6 0z" />
+            </svg>
+          </div>
+          <h4>Quyền lợi đặc biệt</h4>
+        </div>
+        <img src="/cp/quyen-loi-thanh-vien/family-care/media/images/page5.jpg" alt="" width="600" height="400" class="benefit-photo"
+          style="width:calc(100% - 36px);height:auto;">
+        <div class="benefit-body">
+          <table class="benefit-table">
+            <tr>
+              <td colspan="2" class="full">Phiếu theo dõi Paris Family Care giúp gia đình dễ dàng quản lý lịch chăm sóc.
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2" class="full">Voucher Family Smile 2.000.000đ dành cho người thân khi phát sinh dịch vụ
+                răng sứ, niềng răng hoặc implant đủ điều kiện.</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== VALIDITY / CTA BANNER ===== -->
+    <section class="bg-cream reveal" style="padding-top:6px;">
+      <div class="validity">
+        <div class="validity-top">
+          <div class="validity-clock">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M12 7v5l3.5 2" />
+            </svg>
+          </div>
+          <div class="validity-text">
+            <p class="label">Thời hạn kích hoạt</p>
+            <p class="dates">từ 15/09/2026 - 30/09/2026</p>
+          </div>
+        </div>
+        <button class="cta" onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})">
+          Nhận quyền lợi cho cả gia đình ngay
+          <svg viewBox="0 0 24 24" fill="none" stroke="#152F73" stroke-width="2.4" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M5 12h14M13 6l6 6-6 6" />
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="bg-white reveal">
+      <h2 class="sec-title">CÂU HỎI THƯỜNG GẶP</h2>
+
+      <div id="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span class="qmark">?</span>
+            <span>Gói Paris Family Care kích hoạt có mất phí không?</span>
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">Kích hoạt không mất phí. Đây là gói quà tặng tri ân trị giá 7,5 triệu đồng dành cho
+              khách hàng thuộc đối tượng chương trình. Paris sẽ kiểm tra thông tin và liên hệ xác nhận trước khi kích
+              hoạt.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span class="qmark">?</span>
+            <span>Gói dùng được cho mấy người?</span>
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">Gói áp dụng cho tối đa 04 thành viên trong gia đình.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span class="qmark">?</span>
+            <span>Gói có thời hạn bao lâu?</span>
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">Gói có thời hạn 01 năm kể từ ngày kích hoạt.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span class="qmark">?</span>
+            <span>Tôi có thể sử dụng gói ở đâu?</span>
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">Gói áp dụng tại Bệnh viện RHM Paris và hệ thống chi nhánh Nha khoa Paris trên toàn
+              quốc.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span class="qmark">?</span>
+            <span>Voucher Family Smile áp dụng thế nào?</span>
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">Voucher trị giá 2.000.000đ, dành cho người thân khi phát sinh dịch vụ răng sứ,
+              niềng răng hoặc implant với hóa đơn từ 10.000.000đ. Voucher không quy đổi tiền mặt và có hiệu lực 3 tháng
+              từ ngày kích hoạt gói.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span class="qmark">?</span>
+            <span>Sau khi đăng ký form, Paris sẽ làm gì?</span>
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">Paris sẽ liên hệ xác nhận quyền lợi, kiểm tra điều kiện áp dụng và hướng dẫn bạn
+              kích hoạt gói chăm sóc cho gia đình qua hotline: 0943.776.699.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FORM ===== -->
+    <section class="bg-cream reveal" id="form">
+      <img src="/cp/quyen-loi-thanh-vien/family-care/media/images/page6.jpg" alt="" width="600" height="400"
+        style="display:block;width:100%;height:auto;border-radius:16px;margin-bottom:20px;">
+
+      <div class="form-card">
+        <span class="tag">Paris Family Care</span>
+        <h3>CHĂM RĂNG KHỎE ĐẸP<br>CẢ NHÀ CÙNG VUI</h3>
+
+        <div id="formBox">
+          <div id="formInner">
+            <div class="field">
+              <label for="fName">Họ và tên:</label>
+              <input id="fName" type="text" required>
+              <p class="err" id="eName">Vui lòng nhập họ tên (tối thiểu 2 ký tự).</p>
+            </div>
+            <div class="field">
+              <label for="fTel">Số điện thoại:</label>
+              <input id="fTel" type="tel" required>
+              <p class="err" id="eTel">Số điện thoại không hợp lệ.</p>
+            </div>
+            <div class="field">
+              <label for="fPin">Chi nhánh mong muốn:</label>
+              <select id="fPin" required>
+                <option value="" selected disabled></option>
+                <option>Hà Nội</option>
+                <option>Hải Phòng</option>
+                <option>Vinh</option>
+                <option>Đà Nẵng</option>
+                <option>TP.HCM</option>
+                <option>Quảng Ninh</option>
+                <option>Bình Dương</option>
+              </select>
+            </div>
+            <!-- honeypot: tên field trung tính để trình duyệt KHÔNG autofill (tránh chặn nhầm khách thật) -->
+            <input id="fHp" type="text" name="hp_ref_code" tabindex="-1" autocomplete="off" aria-hidden="true"
+              data-lpignore="true" data-form-type="other" data-1p-ignore="true"
+              style="position:absolute;left:-9999px;opacity:0;height:0;width:0">
+            <label class="agree" id="agreeBox" for="fAgree">
+              <input id="fAgree" type="checkbox">
+              <span>Tôi đồng ý cho phép Nha khoa Paris sử dụng dữ liệu cá nhân của tôi để liên hệ tư vấn, xác nhận lịch
+                hẹn và gửi thông tin ưu đãi, theo
+                <a href="https://nhakhoaparis.vn/chinh-sach-bao-mat-thong-tin-khach-hang-tai-nha-khoa-paris"
+                  target="_blank" rel="noopener" title="Chính sách bảo mật">Chính sách bảo mật</a> và
+                <a href="https://nhakhoaparis.vn/dieu-khoan-su-dung" target="_blank" rel="noopener"
+                  title="Điều khoản sử dụng">Điều khoản sử dụng</a>.</span>
+            </label>
+            <p class="err" id="eAgree">Vui lòng đồng ý để tiếp tục.</p>
+            <button type="submit" class="submit-btn" id="fSubmit">
+              Nhận quà tặng ngay
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </button>
+          </div>
+          <div class="done" id="formDone">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 22a10 10 0 100-20 10 10 0 000 20zM8 12.5l2.5 2.5L16 9.5" />
+            </svg>
+            <h3>Đăng ký thành công</h3>
+            <p>Nha khoa Paris sẽ liên hệ xác nhận quyền lợi tháng 9 trong thời gian sớm nhất. Hotline hỗ trợ: <a
+                href="tel:0943776699" style="color:var(--blue-700);font-weight:700">0943776699</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER — chỗ trống để chèn logo thật ===== -->
+    <div class="footer bg-navy">
+      <div class="logo-slot on-dark large" style="margin:0 auto 16px;">
+        <img src="/cp/quyen-loi-thanh-vien/family-care/media/images/logo.png" alt="" width="120" height="48">
+      </div>
+      <p class="tagline">HỆ THỐNG CHUỖI NHA KHOA UY TÍN TẠI VIỆT NAM</p>
+      <a href="tel:0943776699" class="footer-hotline">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path
+            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+        </svg>
+        Hotline: 0943.776.699
+      </a>
+      <p class="footer-branches">Cơ sở: Hà Nội - Hải Phòng - Vinh - Đà Nẵng - TP.HCM - Quảng Ninh - Bình Dương</p>
+    </div>
+
+    <div class="footer_pr_2_0_0__sub">
+      <div class="footer_pr_2_0_0__policy">
+        <a href="https://nhakhoaparis.vn/chinh-sach-bao-mat-thong-tin-khach-hang-tai-nha-khoa-paris"
+          title="Chính sách bảo mật">Chính sách bảo mật</a>
+        <a href="https://nhakhoaparis.vn/chinh-sach-noi-dung" title="Chính sách nội dung">Chính sách nội dung</a>
+        <a href="https://nhakhoaparis.vn/dieu-khoan-su-dung" title="Điều khoản sử dụng">Điều khoản sử dụng</a>
+      </div>
+      <div class="footer_pr_2_0_0__legal">
+        <p class="footer_pr_2_0_0__company">Công ty Cổ phần Nha khoa Paris</p>
+        <p>Trụ sở chính: Tầng 1 + Tầng 2, số 12 phố Thái Thịnh, Phường Đống Đa, Thành phố Hà Nội, Việt Nam</p>
+        <p>Mã số doanh nghiệp: 0111123127</p>
+        <p>Giấy phép hoạt động khám bệnh, chữa bệnh số: 2032/HNO-GPHĐ/CL1 do Sở Y tế TP. Hà Nội cấp ngày 23/10/2025</p>
+        <p>Chịu trách nhiệm nội dung: Công ty Cổ phần Nha khoa Paris</p>
+      </div>
+    </div>
+
+    <!-- ===== STICKY BOTTOM BAR — chỗ trống để chèn logo thật ===== -->
+    <div class="sticky-bar" id="stickyBar">
+      <div class="logo-slot compact">
+        <img src="/cp/quyen-loi-thanh-vien/family-care/media/images/logo.png" alt="" width="90" height="36">
+      </div>
+      <button class="sticky-cta" onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})">
+        NHẬN QUÀ NGAY
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path d="M5 12h14M13 6l6 6-6 6" />
+        </svg>
+      </button>
+    </div>
+
+  </div>
+
+  <script src="https://nhakhoaparis.vn/cp/quyen-loi-thanh-vien/script.min.js?v=0722"></script>
+
+  <script>
+    /* ---------- FORM ---------- */
+    var SERVICE_NAME = "Paris Family Care";
+    var fName = document.getElementById("fName"), fTel = document.getElementById("fTel"),
+      eName = document.getElementById("eName"), eTel = document.getElementById("eTel"),
+      fPin = document.getElementById("fPin"),
+      fSubmit = document.getElementById("fSubmit"), formBox = document.getElementById("formBox"),
+      formInner = document.getElementById("formInner"), formDone = document.getElementById("formDone"),
+      fAgree = document.getElementById("fAgree"), agreeBox = document.getElementById("agreeBox"),
+      eAgree = document.getElementById("eAgree"),
+      fHp = document.getElementById("fHp");
+    /* Trình duyệt có thể autofill honeypot sau khi load -> xoá để không gắn cờ nhầm khách thật */
+    if (fHp) {
+      fHp.value = "";
+      [300, 1200].forEach(function (d) {
+        setTimeout(function () {
+          if (fHp.value !== "") { console.log("[FORM] Honeypot bị autofill ('" + fHp.value + "') -> đã xoá."); fHp.value = ""; }
+        }, d);
+      });
+    }
+    var clickPhone = typeof getQueryParam === "function" ? getQueryParam("dt") : null; /* SĐT từ URL ?dt=... */
+    var TEL = /^(0|\+84)(3|5|7|8|9)[0-9]{8}$/;
+    function setErr(input, box, bad) {
+      input.setAttribute("aria-invalid", bad ? "true" : "false");
+      box.classList.toggle("on", bad);
+    }
+    function submit() {
+      console.groupCollapsed("%c[FORM] Bấm nút đăng ký - " + new Date().toLocaleString("vi-VN"), "color:#0a7;font-weight:700");
+      if (fSubmit.disabled) { console.warn("[FORM] Nút đang khoá (đã gửi hoặc đang gửi) -> bỏ qua."); console.groupEnd(); return; }
+      var nameOk = fName.value.trim().length >= 2;
+      var tel = fTel.value.replace(/[\s.\-()]/g, "");
+      var telOk = TEL.test(tel);
+      var agreeOk = fAgree.checked;
+      console.log("[FORM] Dữ liệu nhập:", { name: fName.value, telRaw: fTel.value, telChuan: tel, agree: agreeOk });
+      console.log("[FORM] Kết quả kiểm tra:", { tenHopLe: nameOk, sdtHopLe: telOk, dongY: agreeOk });
+      setErr(fName, eName, !nameOk); setErr(fTel, eTel, !telOk);
+      agreeBox.setAttribute("aria-invalid", agreeOk ? "false" : "true");
+      eAgree.classList.toggle("on", !agreeOk);
+      if (!nameOk) { console.warn("[FORM] DỪNG - Tên không hợp lệ (cần >= 2 ký tự)."); console.groupEnd(); fName.focus(); return; }
+      if (!telOk) { console.warn("[FORM] DỪNG - SĐT không hợp lệ:", tel); console.groupEnd(); fTel.focus(); return; }
+      if (!agreeOk) { console.warn("[FORM] DỪNG - Chưa tích ô đồng ý dữ liệu cá nhân."); console.groupEnd(); fAgree.focus(); return; }
+      /* honeypot: chỉ ĐÁNH DẤU, không chặn - tránh mất lead thật do trình duyệt autofill */
+      var hpFilled = !!(fHp && fHp.value.trim() !== "");
+      if (hpFilled) console.warn("[FORM] Honeypot có giá trị (nghi bot / autofill):", fHp.value, "-> vẫn gửi nhưng gắn cờ.");
+      fSubmit.disabled = true; fSubmit.textContent = "Đang gửi...";
+      console.log("[FORM] Hợp lệ -> khoá nút, chuẩn bị gửi lead.");
+
+      /* Gửi lead về Google Sheet (script.min.js) */
+      var lead = {
+        iname: fName.value.trim(),
+        imob: tel,
+        iservice: `Family Care + Chi nhánh: ${fPin.value || ""}`,
+        iclick: clickPhone ? "Khách đã click" : "Không có",
+        inote: hpFilled ? SERVICE_NAME + " | [NGHI SPAM]" : SERVICE_NAME
+      };
+      console.log("%c[LEAD] Gửi form Đăng ký nhận quyền lợi", "color:#0a7;font-weight:700");
+      console.table({
+        Name: lead.iname,
+        Mobile: lead.imob,
+        Service: lead.iservice,
+        Date: new Date().toLocaleString("vi-VN"),
+        Link: window.location.href,
+        Click: lead.iclick,
+        Note: lead.inote
+      });
+
+      if (typeof sendSheetMemberPR === "function") {
+        var t0 = Date.now();
+        var p = sendSheetMemberPR(lead, "");
+        if (p && typeof p.then === "function") {
+          p.then(function (r) { console.log("[FORM] Lead đã ghi vào Sheet sau", (Date.now() - t0) + "ms. Phản hồi:", r); })
+            .catch(function (err) { console.error("[FORM] Lead GỬI HỎNG sau", (Date.now() - t0) + "ms:", err); });
+        } else {
+          console.warn("[FORM] sendSheetMemberPR không trả về Promise -> không theo dõi được kết quả (script.min.js bản cũ?).");
+        }
+      } else {
+        console.error("[LEAD] Không tải được script.min.js -> lead KHÔNG được gửi.");
+      }
+      console.groupEnd();
+
+      setTimeout(function () {
+        formInner.style.display = "none";
+        formDone.classList.add("on");
+        formBox.scrollIntoView({ block: "center", behavior: "smooth" });
+        console.log("[FORM] Hiển thị màn hình 'Đăng ký thành công'.");
+      }, 500);
+    }
+
+    /* Tự động gửi khi URL có ?dt=so-dien-thoai (1 lần / session) */
+    if (typeof handlePhoneTracking === "function") {
+      handlePhoneTracking({ iname: "", imob: "", iservice: "Family Care", iclick: "", inote: "" });
+    } else if (clickPhone) {
+      console.error("[LEAD] Không tải được ../script.min.js -> tracking ?dt= KHÔNG chạy.");
+    }
+    fSubmit.addEventListener("click", submit);
+    fName.addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); fTel.focus(); } });
+    fTel.addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); fTel.blur(); submit(); } });
+    [fName, fTel].forEach(function (i) {
+      i.addEventListener("input", function () {
+        i.setAttribute("aria-invalid", "false");
+        (i === fName ? eName : eTel).classList.remove("on");
+      });
+    });
+    fAgree.addEventListener("change", function () {
+      agreeBox.setAttribute("aria-invalid", fAgree.checked ? "false" : "true");
+      eAgree.classList.toggle("on", !fAgree.checked);
+    });
+
+
+    function toggleFaq(btn) {
+      var item = btn.parentElement;
+      var answer = item.querySelector('.faq-a');
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function (el) {
+        if (el !== item) { el.classList.remove('open'); el.querySelector('.faq-a').style.maxHeight = null; }
+      });
+      if (isOpen) {
+        item.classList.remove('open');
+        answer.style.maxHeight = null;
+      } else {
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    }
+
+    // reveal on scroll (progressive enhancement — always falls back to visible)
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); } });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+    } else {
+      document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
+    }
+    // safety net: guarantee full visibility even if observer never fires (e.g. tall viewport, embedded preview)
+    setTimeout(function () {
+      document.querySelectorAll('.reveal:not(.in)').forEach(function (el) { el.classList.add('in'); });
+    }, 900);
+
+    // hide sticky bar near very top (inside hero) only
+    var hero = document.querySelector('.hero');
+    var bar = document.getElementById('stickyBar');
+    var shell = document.querySelector('.device-shell');
+    function onScroll() {
+      var y = shell.scrollTop || window.scrollY || document.documentElement.scrollTop;
+      if (y < 120) { bar.classList.add('hide'); } else { bar.classList.remove('hide'); }
+    }
+    window.addEventListener('scroll', onScroll, true);
+    shell.addEventListener('scroll', onScroll);
+    onScroll();
+  </script>
+</body>
+
+</html>
+			<script>			
+				setTimeout(() => {
+					(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+						new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+						j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+						'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+						})(window,document,'script','dataLayer','GTM-TCVNGKL');
+				}, 3000);
+			</script>
+			<script>
+				setTimeout(() => {
+					! function(f, b, e, v, n, t, s) {
+						if (f.fbq) return;
+						n = f.fbq = function() {
+							n.callMethod ?
+								n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+						};
+						if (!f._fbq) f._fbq = n;
+						n.push = n;
+						n.loaded = !0;
+						n.version = '2.0';
+						n.queue = [];
+						t = b.createElement(e);
+						t.async = !0;
+						t.src = v;
+						s = b.getElementsByTagName(e)[0];
+						s.parentNode.insertBefore(t, s)
+					}(window,
+						document, 'script', '//connect.facebook.net/en_US/fbevents.js');
+
+					fbq('init', '1216077185086864');
+					fbq('track', 'PageView');
+				}, 3000);
+
+				setTimeout(() => {
+					// Tạo một phần tử script mới
+					var script = document.createElement('script');
+				
+					// Thiết lập thuộc tính src cho phần tử script
+					script.src = 'https://sp.zalo.me/plugins/sdk.js';
+				
+					// Thêm phần tử script vào phần tử head hoặc body của tài liệu
+					document.head.appendChild(script); // hoặc document.body.appendChild(script);
+				}, 3000)
+			</script>	
+			<script async src='https://www.googletagmanager.com/gtag/js?id=G-0J26L8LW4M'></script>
+			<script>
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
+				gtag('config', 'G-0J26L8LW4M');
+			</script>	
+			<script>
+				{
+					// Biến cờ để theo dõi trạng thái
+					let firstScreenReached = false;
+					let endScreenReached = false;
+
+					window.addEventListener('scroll', function() {
+						// Chiều cao của nội dung
+						const contentHeight = document.documentElement.scrollHeight;
+
+						// Chiều cao của phần tử đầu tiên
+						const firstScreen = window.innerHeight * 0.9;
+
+						// Chiều cao của phần tử cuối cùng
+						const endScreen = contentHeight - firstScreen * 1.6;
+						
+						
+						// Vị trí cuộn hiện tại
+						const scrollPosition = window.scrollY;
+
+						// Kiểm tra xem đã cuộn đến cuối màn hình đầu chưa
+						if (scrollPosition >= firstScreen && !firstScreenReached) {
+							console.log('Đã cuộn đến cuối màn hình đầu');
+
+							gtag('event', 'scrollFirstScreen', {
+								event_category: 'scrollFirstScreen',
+								event_label: 'Cuộn hết màn hình đầu',
+								value: scrollPosition
+							});
+							
+							// Cập nhật biến cờ để ngăn thông báo lặp lại
+							firstScreenReached = true; 
+						}
+
+						// Kiểm tra xem đã cuộn hết nội dung chưa
+						if (scrollPosition >= endScreen && !endScreenReached) {
+							console.log('Đã cuộn đến cuối landing');
+
+							gtag('event', 'scrollEndScreen', {
+								event_category: 'scrollEndScreen',
+								event_label: 'Cuộn hết màn hình landing',
+								value: scrollPosition 
+							});
+
+							// Cập nhật biến cờ để ngăn thông báo lặp lại
+							endScreenReached = true; 
+						}
+					});
+				}
+			</script>	
+		
+			<div id='fb-root'></div>
+			<style>
+				#fb-root .fb_dialog iframe{
+					bottom: 80px !important;
+					right: -5px !important;
+				}
+				@media (max-width:414px){
+					#fb-root .fb_dialog iframe{
+						bottom: 140px !important;
+						right: -5 !important;
+					}
+				}
+			</style>
+			<div class='fb-customerchat'
+				attribution=setup_tool				page_id='185061704983484'				greeting_dialog_display=hide				logged_in_greeting='Chào bạn! Nha khoa Paris có thể giúp gì được cho bạn?'
+				logged_out_greeting='Chào bạn! Nha khoa Paris có thể giúp gì được cho bạn?'>
+			</div>
+			<script>
+				setTimeout(() => {
+					window.fbAsyncInit = function() {
+						FB.init({
+							xfbml: true,
+							version: 'v3.3'
+						});
+					};
+					(function(d, s, id) {
+						var js, fjs = d.getElementsByTagName(s)[0];
+						if (d.getElementById(id)) return;
+						js = d.createElement(s);
+						js.id = id;
+						js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+						fjs.parentNode.insertBefore(js, fjs);
+					}(document, 'script', 'facebook-jssdk'));
+				
+				}, 8000);
+			</script>

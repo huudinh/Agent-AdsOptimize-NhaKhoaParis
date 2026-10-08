@@ -12,7 +12,7 @@ Version: 2.0 — kế thừa mục 3.3 bản v1.3
 - Header (màu): `https://nhakhoaparis.vn/wp-content/themes/ParisBrand2024/Module/Header/header_pr_2_0_0/images/logo.png`
 - Footer (trắng, nền tối): `https://nhakhoaparis.vn/wp-content/themes/ParisBrand2024/Module/Footer/footer_pr_2_0_0/images/logo-white.png`
 
-**Màu — Design System Paris v3.0** *(dẫn xuất từ Bộ nhận diện thương hiệu, mục 4.1)*
+**Màu — Design System Paris v3.1** *(bộ nhận diện mục 4.1 + token production `family-care.html`)*
 
 Ba màu gốc của bộ NDTH, **không được đổi**:
 
@@ -22,52 +22,59 @@ Ba màu gốc của bộ NDTH, **không được đổi**:
 | **Pantone Red 032 C** | `#ED2E38` | 237, 47, 57 | 0, 96, 82, 0 |
 | **White** | `#FFFFFF` | 255, 255, 255 | 0, 0, 0, 0 |
 
-Thang màu đầy đủ cho giao diện số, dẫn xuất từ ba màu trên:
+Thang màu đầy đủ cho giao diện số — **lấy nguyên từ trang production `family-care.html`**, không tự chế biến thể mới:
 
 | Vai trò | Mã | Dùng cho |
 |---|---|---|
-| **Primary** (`--blue`) | `#2A52BE` | **Cerulean Blue — bộ NDTH.** Nền nút chính · heading trên nền trắng |
-| Primary dark | `#224298` | Hover / active của nút chính |
-| Secondary | `#6382D6` | Viền · icon · nền phụ. **Không đặt chữ nhỏ lên** (3.7:1) |
-| Accent | `#A4B3DD` | Đường kẻ · nền nhạt · biểu đồ. **Không dùng cho chữ** |
-| Soft BG | `#EDF0F7` | Nền section nhạt |
-| **Highlight** | `#ED2E38` | **Pantone Red 032 C — bộ NDTH.** CTA phụ · nhãn ưu đãi · giá cỡ lớn |
-| Danger | `#C3131C` | Đỏ sâu: chữ đỏ cỡ nhỏ · lỗi form |
-| Soft Red | `#FACFD1` | Nền badge ưu đãi |
-| Nền | `#FFFFFF` | **White — bộ NDTH** |
-| Text | `#1D2939` | |
-| Sub text | `#667085` | |
-| Border | `#E4E7EC` | |
+| `--blue` | `#2A52BE` | **Cerulean Blue — bộ NDTH.** Nút chính · heading |
+| `--blue-dark` | `#152F73` | Hover / active |
+| `--blue-deep` | `#0C1D4D` | Tiêu đề section · nền footer |
+| `--blue-light` | `#EAF0FC` | Nền khối nhạt |
+| `--blue-mid` | `#D7E2FA` | Viền · đường kẻ |
+| `--red` | `#ED2E38` | **Pantone Red 032 C — bộ NDTH.** CTA · nhãn ưu đãi · giá |
+| `--red-dark` | `#C11B26` | Chữ đỏ cỡ nhỏ · lỗi form (6,08 AA) |
+| `--red-light` | `#FDEAEB` | Nền badge ưu đãi |
+| `--cream` | `#FBF8F3` | Nền section xen kẽ với trắng |
+| `--paper` | `#FFFFFF` | **White — bộ NDTH** |
+| `--ink` | `#131A2E` | Chữ thường |
+| `--ink-soft` | `#4A5270` | Chữ phụ |
+| `--gold` | `#C9A24B` | **Chỉ trên nền navy** — trên trắng chỉ 2,40:1 |
+| `--line` | `#E4E1D8` | Viền thẻ |
+| nền trang | `#DCE3EE` | Xám xanh ngoài container |
 
-**Tỷ lệ bắt buộc: 80% trắng / 15% xanh / 5% đỏ** — cảm hứng cờ Pháp. **Không nền toàn xanh.**
-- **Gradient xanh chủ đạo:** `linear-gradient(135deg, #2A52BE 0%, #5273CE 55%, #2A52BE 100%)`
-- **Text giá:** `#ED2E38` khi cỡ ≥ 18,66px đậm · `#C3131C` khi nhỏ hơn (để đạt AA)
+**Tỷ lệ bắt buộc: 80% trắng/kem / 15% xanh / 5% đỏ** — cảm hứng cờ Pháp. **Không nền toàn xanh.**
+- **Nền footer:** `linear-gradient(180deg, #0C1D4D, #0A1840)`
+- **Text giá:** `#ED2E38` khi cỡ ≥ 16px đậm · `#C11B26` khi nhỏ hơn (để đạt AA)
 - **Nhấn trên nền xanh:** `#FFFFFF` — trắng là màu thứ ba của bộ NDTH
-- ⛔ **Không đặt đỏ `#ED2E38` lên nền xanh `#2A52BE`** — tương phản 1,66:1, chữ gần như biến mất
+- ⛔ **Không đặt đỏ lên nền xanh** (1,66:1) · **không đặt `--gold` lên nền trắng** (2,40:1)
+- Khung trang đầy đủ (header · container · footer · sticky) ở `np-khung-landing.md`
 
-**Typography — một font cho cả hệ: `Bricolage Grotesque`**
+**Typography — hai font, theo đúng trang production**
 
-Variable font, **hỗ trợ tiếng Việt đầy đủ** (gồm ký tự `₫`). Trục: `opsz` 12–96 · `wght` 200–800 · `wdth` 75–100.
+Heading **Bricolage Grotesque** 700 · body **Be Vietnam Pro** 400/600/700/800. Cả hai đều đủ tiếng Việt.
 
 ```html
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap" rel="stylesheet">
 ```
 
-| Vai trò | Weight | Ghi chú |
+```css
+body{font-family:'Be Vietnam Pro',sans-serif}
+h1,h2,h3,.serif{font-family:'Bricolage Grotesque','Be Vietnam Pro',sans-serif;font-weight:700}
+```
+
+| Vai trò | Font | Weight |
 |---|---|---|
-| H1 · H2 | **800** | line-height 110–120% |
-| H3 · H4 | **700** | |
-| Sub-heading · nhãn · chữ trên nút | **600** | |
-| Body nhấn · số liệu | **500** | |
-| Body | **400** | **≥ 16px trên mobile** |
+| `h1` `h2` `h3` | Bricolage Grotesque | **700** (800 cho hero) |
+| Body · nút · form · nhãn | Be Vietnam Pro | **400** thường · **600–700** nhấn · **800** CTA |
 
-- `font-optical-sizing: auto` để trục `opsz` tự chạy theo cỡ chữ.
-- Line-height **150%** cho body.
-- Fallback: `"Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif`.
+- Body **≥ 16px** trên mobile. Line-height 150% body · 1.32 cho tiêu đề section.
+- Fallback của heading là Be Vietnam Pro — font tải chậm thì chữ vẫn đúng tiếng Việt.
+- **Không nạp font thứ ba.** Cần nhấn thì đổi weight.
 
-> ⚠️ **Đã bỏ** `Oxy Vietnam` và `SVN Rosellinda Alyamore` khỏi hệ web — bộ nhận diện chốt một font duy nhất. Nếu ấn phẩm in vẫn dùng font chữ viết tay cho banner, ghi rõ ở đây trước khi dựng POSM.
+> ⚠️ **Đã bỏ** `Oxy Vietnam` và `SVN Rosellinda Alyamore` khỏi hệ web. Nếu ấn phẩm in vẫn dùng font chữ viết tay cho banner, ghi rõ ở đây trước khi dựng POSM.
 
 **Giọng:** chuyên nghiệp – chuẩn Pháp – cao cấp – hiện đại – thân thiện; y khoa nhưng **không khô cứng**. Không dùng từ cấm / so sánh tuyệt đối.
 

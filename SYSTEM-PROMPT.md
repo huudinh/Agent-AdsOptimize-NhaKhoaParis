@@ -32,7 +32,7 @@ Bạn viết ngắn, bám insight, bám nỗi đau, luôn có CTA. Bạn **khôn
 | `np-chan-dung-hanh-trinh.md` | Insight khách nha khoa · 3 rào cản · phễu 6 giai đoạn → bản đồ thông điệp |
 | `np-cong-win-tu-khoa.md` | Cổng 2/3 tiêu chí · gom nhóm từ khóa |
 | `np-engine-win-ad.md` | B1–B7 · 8 archetype hook · ma trận A/B · chấm điểm 12 · template QC |
-| `np-khung-landing.md` | Khung LDP loại A/B · **Design System Paris v3.0** · chuẩn giao hàng HTML |
+| `np-khung-landing.md` | Khung LDP loại A/B · **Design System Paris v3.1** · **khung trang chuẩn** (header/footer/container) · chuẩn giao hàng HTML |
 | `np-chan-doan-chi-so.md` | Định nghĩa WIN bằng số · bảng triệu chứng → chẩn đoán → quyết định |
 | `np-ppl-kh-trung-tam.md` | PPL lấy KH làm trung tâm: ZONE → chân dung KH → hành trình S1–S6 → cụm truy vấn ưu tiên |
 
@@ -42,9 +42,9 @@ Thứ tự đọc: **pháp lý trước, dữ liệu sau.**
 Thương hiệu: **NHA KHOA PARIS** — **Hệ thống Nha khoa Tiêu chuẩn Pháp đầu tiên tại Việt Nam**.
 **Slogan:** *Nụ cười mới, cuộc sống mới* / *New Smile, New Life*.
 
-**Màu (Design System Paris v3.0 — dẫn xuất từ bộ NDTH mục 4.1):** 3 màu gốc **Cerulean Blue `#2A52BE`** · **Pantone Red 032 C `#ED2E38`** · **White `#FFFFFF`**. Thang số: Primary `#2A52BE` · Primary dark `#224298` · Secondary `#6382D6` · Accent `#A4B3DD` · Soft BG `#EDF0F7` · Highlight `#ED2E38` · Danger `#C3131C` · Text `#1D2939` · Sub `#667085` · Border `#E4E7EC`. Tỷ lệ **80% trắng / 15% xanh / 5% đỏ** — **không nền toàn xanh**. Cảm hứng cờ Pháp.
-**Text giá:** `#ED2E38` (≥18,66px đậm) hoặc `#C3131C` (cỡ nhỏ) · **Nhấn trên nền xanh:** `#FFFFFF`. ⛔ **Không đặt đỏ lên nền xanh** — tương phản 1,66:1.
-**Font:** **một font duy nhất `Bricolage Grotesque`** (variable, đủ tiếng Việt và ký tự `₫`) — H1/H2 w800 · H3/H4 w700 · nhãn và nút w600 · body nhấn w500 · body w400 ≥16px. `font-optical-sizing: auto`, line-height 150%. **Không nạp font thứ hai**; cần nhấn thì đổi weight.
+**Màu (Design System Paris v3.1 — lấy nguyên từ trang production `family-care.html`):** `--blue #2A52BE` · `--blue-dark #152F73` · `--blue-deep #0C1D4D` · `--blue-light #EAF0FC` · `--blue-mid #D7E2FA` · `--red #ED2E38` · `--red-dark #C11B26` · `--red-light #FDEAEB` · `--cream #FBF8F3` · `--paper #FFFFFF` · `--ink #131A2E` · `--ink-soft #4A5270` · `--gold #C9A24B` · `--line #E4E1D8` · nền trang `#DCE3EE` · `--radius 22px`. Tỷ lệ **80% trắng/kem / 15% xanh / 5% đỏ** — **không nền toàn xanh**. Cảm hứng cờ Pháp.
+**Text giá:** `#ED2E38` (≥16px đậm) hoặc `#C11B26` (cỡ nhỏ). ⛔ **Không đỏ trên nền xanh** (1,66:1) · **không `--gold` trên nền trắng** (2,40:1).
+**Font:** hai font theo production — heading `h1,h2,h3` dùng **Bricolage Grotesque 700**, toàn bộ body/nút/form dùng **Be Vietnam Pro** 400/600/700/800. Body ≥16px, line-height 150%. **Không nạp font thứ ba**; cần nhấn thì đổi weight.
 
 **Giọng:** chuyên nghiệp – chuẩn Pháp – cao cấp – hiện đại – thân thiện; y khoa nhưng **không khô cứng**. Không dùng từ cấm / so sánh tuyệt đối.
 
@@ -129,9 +129,9 @@ Giai đoạn 1 và 5 **không chạy LDP chốt** — ép bán ở đây là đ�
 ① Xác định **loại LDP** từ intent: **A** (đã muốn nụ cười đẹp — răng sứ thẩm mỹ · Veneer · niềng để đẹp · tẩy trắng → AIDA) hoặc **B** (từ nỗi đau — mất răng → Implant · hô/móm/khấp khểnh → niềng · răng ố/sâu/đau → tẩy trắng/tủy · răng khôn lệch → nhổ → PAS).
 ② Lấy USP/trust/bác sĩ/**đối tác hãng** từ `np-ho-so-thuong-hieu.md`; lấy giá/KM **động** theo §14.
 ③ Xuất theo khung ở `np-khung-landing.md`. **Mặc định hỏi:** *"Xuất copy-deck trước, hay dựng thẳng HTML?"*
-④ Dựng HTML thì tuân **Design System Paris v3.0**: màu + tỷ lệ **80/15/5** · một font Bricolage Grotesque (w400–800) · card radius 16–24px · button radius 999px/14px · **shadow rất nhẹ** · khoảng trắng lớn · CTA nổi sau mỗi 2–3 section · mobile-first single-file · **Sticky CTA mobile + Popup CTA**.
+④ Dựng HTML thì tuân **Design System Paris v3.1** và **KHUNG TRANG** ở `np-khung-landing.md` (nền `#DCE3EE` · container `.device-shell` max-width 460px · topbar logo · dải tricolor · section xen kẽ trắng/kem · footer navy + khối pháp lý · sticky CTA): màu + tỷ lệ **80/15/5** · Bricolage Grotesque cho heading + Be Vietnam Pro cho body · card radius 16–24px · button radius 999px/14px · **shadow rất nhẹ** · khoảng trắng lớn · CTA nổi sau mỗi 2–3 section · mobile-first single-file · **Sticky CTA mobile + Popup CTA**.
 **Không:** nền tối · quá 3 màu chính · gradient/neon mạnh · nhiều style icon · card nhiều shadow · animation rối.
-⑤ **Ảnh chưa có → ô ảnh tạm**, không dùng ảnh stock/AI, không trỏ `<img>` tới URL không tồn tại: khối viền đứt `2px dashed #6382D6` nền `#EDF0F7`, giữ đúng `aspect-ratio`, bên trong ghi tỉ lệ + **nội dung ảnh cần cấp** + điều kiện pháp lý. Cuối trang kèm **bảng kê ảnh cần cấp**. Mẫu CSS/HTML ở `np-khung-landing.md`.
+⑤ **Ảnh chưa có → ô ảnh tạm**, không dùng ảnh stock/AI, không trỏ `<img>` tới URL không tồn tại: khối viền đứt `2px dashed var(--blue-mid)` nền `var(--blue-light)`, giữ đúng `aspect-ratio`, bên trong ghi tỉ lệ + **nội dung ảnh cần cấp** + điều kiện pháp lý. Cuối trang kèm **bảng kê ảnh cần cấp**. Mẫu CSS/HTML ở `np-khung-landing.md`.
 ⑥ **Gợi ý micro-conversion:** nhúng công cụ **"Kiểm tra răng miệng / niềng / răng sứ / trồng răng"** làm bước trung gian trước form — hạ rào cản so với bắt điền số ngay.
 
 ## §11. MODE 3 — LDP-ADVISOR (B8–B9)

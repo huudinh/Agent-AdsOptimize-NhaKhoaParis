@@ -1,6 +1,6 @@
 # 🦷 ADS OPTIMIZE — Tối ưu quảng cáo hiệu suất (Nha khoa Paris)
 
-> Version 2.2 · AI **sinh mẫu quảng cáo win · dựng landing page · chẩn đoán số liệu ADS + GA** cho **Hệ thống Nha khoa Tiêu chuẩn Pháp đầu tiên tại Việt Nam** — làm theo chỉ số, không làm theo cảm tính.
+> Version 2.3 · AI **sinh mẫu quảng cáo win · dựng landing page · chẩn đoán số liệu ADS + GA** cho **Hệ thống Nha khoa Tiêu chuẩn Pháp đầu tiên tại Việt Nam** — làm theo chỉ số, không làm theo cảm tính.
 
 Theo công thức HCI **R·M·K·W·O**. Kiến trúc **BRAIN brand-neutral** ([`SYSTEM-PROMPT.md`](SYSTEM-PROMPT.md)) + **MODULE thương hiệu tách riêng** ([`knowledge/np-ho-so-thuong-hieu.md`](knowledge/np-ho-so-thuong-hieu.md)) → đổi brand chỉ cần thay module.
 
@@ -41,7 +41,7 @@ Khách nha khoa mua **chức năng + sự tự tin** — ăn nhai tốt lại, h
 | Mode | Làm gì | Input tối thiểu | Đầu ra |
 |---|---|---|---|
 | **1 · WIN-AD** | Từ từ khóa → mẫu QC Google RSA + Meta | từ khóa + dịch vụ | 15 headline + 4 description + 3–5 biến thể Meta + bảng chấm WIN + kế hoạch test |
-| **2 · LDP-BUILD** | Từ từ khóa → landing loại A hoặc B | cụm từ khóa + dịch vụ | blueprint 13 section + copy, hoặc HTML single-file theo Design System Paris v3.0 |
+| **2 · LDP-BUILD** | Từ từ khóa → landing loại A hoặc B | cụm từ khóa + dịch vụ | blueprint 13 section + copy, hoặc HTML single-file theo **khung trang chuẩn** + Design System v3.1 |
 | **3 · LDP-ADVISOR** | Đọc ADS + GA → chẩn đoán | CTR·CPC·CPL·impression + scroll·form·booking | điểm nghẽn + 3 quyết định kèm ngưỡng và action |
 | **4 · KEYWORD-ZONE** | Từ 1 ZONE dịch vụ → bộ từ khóa theo chân dung + hành trình | tên ZONE + ngân sách/tháng | chân dung KH · hành trình S1–S6 · chiến dịch kèm tỷ trọng ngân sách · 90–130 từ khóa · phủ định |
 
@@ -142,14 +142,14 @@ Generator **chặn build** nếu: tổng tỷ trọng ngân sách ≠ 100% · t�
 
 | File | Nội dung | Trạng thái |
 |---|---|---|
-| [SYSTEM-PROMPT.md](SYSTEM-PROMPT.md) | Bộ não — 18 mục · **20.092 ký tự** | ✅ |
-| [SYSTEM-PROMPT-NGAN.md](SYSTEM-PROMPT-NGAN.md) | Bản ngắn **7.972 ký tự** — chỉ cho **ChatGPT** · ⚠️ **chỉ dư 28 ký tự so với hạn mức 8.000, sửa phải đo lại** | ✅ |
+| [SYSTEM-PROMPT.md](SYSTEM-PROMPT.md) | Bộ não — 18 mục · **20.711 ký tự** | ✅ |
+| [SYSTEM-PROMPT-NGAN.md](SYSTEM-PROMPT-NGAN.md) | Bản ngắn **7.959 ký tự** — chỉ cho **ChatGPT** · ⚠️ **chỉ dư 41 ký tự so với hạn mức 8.000, sửa phải đo lại** | ✅ |
 | [knowledge/np-rao-phap-ly.md](knowledge/np-rao-phap-ly.md) | Từ cấm → từ đúng · **luật chữ "chính hãng"** · luật ảnh · HITL | ✅ |
-| [knowledge/np-ho-so-thuong-hieu.md](knowledge/np-ho-so-thuong-hieu.md) | Định vị · **bộ nhận diện: màu + font** · Design System v3.0 · đối tác hãng · bác sĩ · taxonomy *(module swappable)* | ✅ |
+| [knowledge/np-ho-so-thuong-hieu.md](knowledge/np-ho-so-thuong-hieu.md) | Định vị · **bộ nhận diện: màu + font** · Design System v3.1 · đối tác hãng · bác sĩ · taxonomy *(module swappable)* | ✅ |
 | [knowledge/np-chan-dung-hanh-trinh.md](knowledge/np-chan-dung-hanh-trinh.md) | Insight · 3 rào cản đặc thù nha khoa · phễu 6 giai đoạn | ✅ |
 | [knowledge/np-cong-win-tu-khoa.md](knowledge/np-cong-win-tu-khoa.md) | Cổng 2/3 · phiếu chấm · gom nhóm · lưu ý từ khóa ngành nha | ✅ |
 | [knowledge/np-engine-win-ad.md](knowledge/np-engine-win-ad.md) | B1–B7 · 8 archetype hook · ma trận A/B · chấm điểm 12 · template QC | ✅ |
-| [knowledge/np-khung-landing.md](knowledge/np-khung-landing.md) | Khung LDP A/B 13 section · **Design System Paris v3.0** · micro-conversion | ✅ |
+| [knowledge/np-khung-landing.md](knowledge/np-khung-landing.md) | Khung LDP A/B 13 section · **khung trang chuẩn** (header/footer/container) · **Design System v3.1** · micro-conversion | ✅ |
 | [knowledge/np-chan-doan-chi-so.md](knowledge/np-chan-doan-chi-so.md) | WIN bằng số · bảng chẩn đoán · thư viện hook | ✅ |
 | [knowledge/np-ppl-kh-trung-tam.md](knowledge/np-ppl-kh-trung-tam.md) | **PPL lấy KH làm trung tâm** · 4 ZONE · lớp chân dung KH · ánh xạ sang workbook | ✅ |
 | [tools/build_keyword_workbook.py](tools/build_keyword_workbook.py) | Generator: 1 zone JSON → 1 file `.xlsx` 5 sheet, kèm cổng kiểm tra | ✅ |
