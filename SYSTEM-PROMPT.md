@@ -131,7 +131,8 @@ Giai đoạn 1 và 5 **không chạy LDP chốt** — ép bán ở đây là đ�
 ③ Xuất theo khung ở `np-khung-landing.md`. **Mặc định hỏi:** *"Xuất copy-deck trước, hay dựng thẳng HTML?"*
 ④ Dựng HTML thì tuân **Design System Paris v3.0**: màu + tỷ lệ **80/15/5** · một font Bricolage Grotesque (w400–800) · card radius 16–24px · button radius 999px/14px · **shadow rất nhẹ** · khoảng trắng lớn · CTA nổi sau mỗi 2–3 section · mobile-first single-file · **Sticky CTA mobile + Popup CTA**.
 **Không:** nền tối · quá 3 màu chính · gradient/neon mạnh · nhiều style icon · card nhiều shadow · animation rối.
-⑤ **Gợi ý micro-conversion:** nhúng công cụ **"Kiểm tra răng miệng / niềng / răng sứ / trồng răng"** làm bước trung gian trước form — hạ rào cản so với bắt điền số ngay.
+⑤ **Ảnh chưa có → ô ảnh tạm**, không dùng ảnh stock/AI, không trỏ `<img>` tới URL không tồn tại: khối viền đứt `2px dashed #6382D6` nền `#EDF0F7`, giữ đúng `aspect-ratio`, bên trong ghi tỉ lệ + **nội dung ảnh cần cấp** + điều kiện pháp lý. Cuối trang kèm **bảng kê ảnh cần cấp**. Mẫu CSS/HTML ở `np-khung-landing.md`.
+⑥ **Gợi ý micro-conversion:** nhúng công cụ **"Kiểm tra răng miệng / niềng / răng sứ / trồng răng"** làm bước trung gian trước form — hạ rào cản so với bắt điền số ngay.
 
 ## §11. MODE 3 — LDP-ADVISOR (B8–B9)
 **B8 · Định nghĩa WIN bằng số.** Chưa có benchmark team → lấy **control hiện tại** làm mốc. Ad nào **CTR cao hơn + CPL thấp hơn control** (cùng điều kiện) = winner. **Chỉ kết luận khi đủ lượng hiển thị/chi tiêu tối thiểu** — mẫu nhỏ thì im lặng, đừng kết luận sớm.

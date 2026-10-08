@@ -75,7 +75,7 @@ Gói Paris có nhiều luật cứng hơn gói Kangnam — thêm luật "chính 
 - v1.0 — clone từ bản Kangnam; chuẩn HCI R·M·K·W·O + Rules; BRAIN brand-neutral + MODULE thương hiệu (3.3); MODE 2 tuân Design System Nha Khoa Paris v2.0.
 - v1.1 — tích hợp Engine WIN (B1–B9) vào MODE 1/3 + cổng 2/3 tiêu chí (3.4).
 - v1.2 — bổ sung Nhận diện thương hiệu (logo · địa chỉ · màu) vào 3.3.
-- **v2.2** — Design System Paris **v3.0**: thay bảng màu bằng bộ nhận diện thương hiệu mục 4.1 (Cerulean Blue `#2A52BE` · Pantone Red 032 C `#ED2E38` · White), dẫn xuất thang phụ và kiểm WCAG; typography chuyển sang **một font `Bricolage Grotesque`** (bỏ Oxy Vietnam và SVN Rosellinda Alyamore). Thêm **MODE 4 — KEYWORD-ZONE** (§12) + knowledge `np-ppl-kh-trung-tam.md`.
+- **v2.2** — Design System Paris **v3.0**: thay bảng màu bằng bộ nhận diện thương hiệu mục 4.1 (Cerulean Blue `#2A52BE` · Pantone Red 032 C `#ED2E38` · White), dẫn xuất thang phụ và kiểm WCAG; typography chuyển sang **một font `Bricolage Grotesque`** (bỏ Oxy Vietnam và SVN Rosellinda Alyamore). Thêm **MODE 4 — KEYWORD-ZONE** (§12) + knowledge `np-ppl-kh-trung-tam.md`. Chuẩn **ô ảnh tạm**: ảnh chưa có thì dựng khối viền đứt ghi rõ tỉ lệ và nội dung cần cấp, kèm **bảng kê ảnh cần cấp** cuối mỗi landing — thay cho ảnh stock/AI.
 
 - v1.3 — chốt mã màu: gradient xanh, text giá `#ed2805`, nhấn trên nền xanh `#ffc229`.
 

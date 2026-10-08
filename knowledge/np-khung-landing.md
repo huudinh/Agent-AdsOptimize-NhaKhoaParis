@@ -67,6 +67,40 @@ Paris có sẵn **công cụ kiểm tra online**: Kiểm tra răng miệng · ki
 - Mọi con số gắn dấu `*` + dòng *"Hiệu quả phụ thuộc cơ địa mỗi người"*.
 - Chữ **"chính hãng"** chỉ dùng cho Straumann · Invisalign · Nacera · Ormco.
 - Before–after chỉ dùng case đã duyệt pháp lý.
+- **Chưa có ảnh thật → dựng ô ảnh tạm** theo mẫu ngay dưới, **không dùng ảnh stock/AI**.
+
+---
+
+## Ô ảnh tạm — bắt buộc khi chưa có ảnh thật
+
+**Không bao giờ** chèn ảnh stock, ảnh AI, hay `<img>` trỏ tới URL không tồn tại. Chưa có ảnh thật đã duyệt → dựng **ô ảnh tạm** đúng mẫu dưới đây. Ô này vừa giữ đúng bố cục, vừa là phiếu đặt hàng cho người cấp ảnh.
+
+```css
+.ph{display:grid;place-content:center;gap:6px;text-align:center;margin:0;padding:16px;
+    aspect-ratio:var(--ar,16/9);background:#EDF0F7;border:2px dashed #6382D6;
+    border-radius:16px;color:#667085;font-size:14px;line-height:1.45}
+.ph b{display:block;font-weight:600;color:#2A52BE}
+```
+
+```html
+<figure class="ph" style="--ar:16/9">
+  <b>Ảnh 16:9</b>
+  Case toàn hàm trước–sau · phục vụ CD2 · cần giấy đồng ý + pháp chế duyệt
+</figure>
+```
+
+**Dòng mô tả phải nói rõ ảnh đó LÀ GÌ**, không viết chung chung "ảnh minh hoạ". Tối thiểu gồm: nội dung · chân dung hoặc section nó phục vụ · điều kiện pháp lý nếu là case thật.
+
+| Vị trí | `--ar` | Ghi chú |
+|---|---|---|
+| Hero | `4/5` mobile · `16/9` desktop | Ảnh duy nhất được tải ngay, không lazy-load |
+| Before–after | `1/1` | Cặp 2 ô cạnh nhau hoặc tab/swipe |
+| Chân dung bác sĩ | `3/4` | Chỉ bác sĩ có trong hồ sơ thương hiệu |
+| Công nghệ · thiết bị · cơ sở | `16/9` | Ảnh thật của hệ thống |
+| Logo hãng đối tác | tự do | Cao 40–56px, nền trắng |
+| Icon | `1/1` | 48px, một bộ icon duy nhất |
+
+**Cuối mỗi landing page phải kèm BẢNG KÊ ẢNH CẦN CẤP** — liệt kê từng ô tạm: section · tỉ lệ · nội dung cần · ai duyệt. Không có bảng này thì trang coi như chưa giao xong.
 
 ---
 

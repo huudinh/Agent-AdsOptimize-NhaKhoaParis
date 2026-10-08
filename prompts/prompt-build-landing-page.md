@@ -81,6 +81,21 @@ QUY TẮC MOBILE (đây là mặc định, không phải tuỳ chọn):
   - Before-after: tab hoặc swipe, không grid nhiều cột.
   - Ảnh: WebP, width/height cố định để không nhảy layout, lazy-load từ
     section 3 trở xuống. Hero là ảnh duy nhất được tải ngay.
+  - CHƯA CÓ ẢNH THẬT -> dựng Ô ẢNH TẠM, tuyệt đối không chèn ảnh stock/AI
+    và không trỏ <img> tới URL không tồn tại. Mẫu bắt buộc:
+      .ph{display:grid;place-content:center;gap:6px;text-align:center;margin:0;
+          padding:16px;aspect-ratio:var(--ar,16/9);background:#EDF0F7;
+          border:2px dashed #6382D6;border-radius:16px;color:#667085;
+          font-size:14px;line-height:1.45}
+      .ph b{display:block;font-weight:600;color:#2A52BE}
+      <figure class="ph" style="--ar:16/9">
+        <b>Ảnh 16:9</b>
+        Case toàn hàm trước-sau · phục vụ CD2 · cần giấy đồng ý + pháp chế duyệt
+      </figure>
+    Dòng mô tả phải nói rõ ảnh đó LÀ GÌ: nội dung · chân dung/section nó phục vụ
+    · điều kiện pháp lý nếu là case thật. Không viết "ảnh minh hoạ".
+    Tỉ lệ: hero 4/5 mobile và 16/9 desktop · before-after 1/1 · bác sĩ 3/4
+    · công nghệ và cơ sở 16/9 · icon 1/1.
   - Không hover-only: mọi thứ phải dùng được bằng ngón tay.
   - Tổng trang mục tiêu < 500KB, không framework, CSS inline trong file.
 
@@ -113,8 +128,10 @@ RÀNG BUỘC PHÁP LÝ — vi phạm là loại thẳng, không tính điểm:
 TRƯỚC KHI VIẾT, hỏi tôi đúng 1 câu: xuất copy-deck trước, hay dựng thẳng HTML?
 
 OUTPUT nếu dựng HTML: 1 file .html hoàn chỉnh, chạy được khi mở trực tiếp,
-kèm bảng đối chiếu cuối output gồm 3 cột:
-  Section | Phục vụ chân dung/rào cản nào | Bằng chứng đã dùng
+kèm HAI bảng ở cuối output:
+  (a) Bảng đối chiếu:  Section | Phục vụ chân dung/rào cản nào | Bằng chứng đã dùng
+  (b) BẢNG KÊ ẢNH CẦN CẤP: Section | Tỉ lệ | Nội dung ảnh cần | Ai duyệt
+      — liệt kê đủ mọi ô ảnh tạm trong trang. Thiếu bảng này là chưa giao xong.
 ```
 
 ---
@@ -215,6 +232,8 @@ Không viết code ở bước này.
 - [ ] Form 2 trường · `type="tel"` `inputmode="numeric"`
 - [ ] Bảng giá dạng card dọc · before-after dạng tab/swipe
 - [ ] Ảnh WebP có width/height · lazy-load từ section 3 · trang < 500KB
+- [ ] Ảnh chưa có → ô ảnh tạm đúng mẫu · **không có ảnh stock/AI**
+- [ ] Có **bảng kê ảnh cần cấp** ở cuối, ghi rõ nội dung và người duyệt
 
 **Pháp lý** — một dòng không đạt là chặn phát hành
 - [ ] Không có từ cấm · không hứa thời gian điều trị cứng
