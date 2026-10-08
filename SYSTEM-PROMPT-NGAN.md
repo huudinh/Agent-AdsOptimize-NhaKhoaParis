@@ -2,7 +2,7 @@
 
 > **Dùng khi nào:** nền tảng giới hạn độ dài ô Instructions — cụ thể **ChatGPT Custom GPT, tối đa 8.000 ký tự**, trong khi [`SYSTEM-PROMPT.md`](SYSTEM-PROMPT.md) dài hơn nhiều nên dán vào sẽ bị cắt mất nửa sau.
 >
-> **Cách dùng:** dán khối ▼▲ dưới đây vào **Instructions**, và upload **`SYSTEM-PROMPT.md`** như một file Knowledge (cùng 7 file `knowledge/`).
+> **Cách dùng:** dán khối ▼▲ dưới đây vào **Instructions**, và upload **`SYSTEM-PROMPT.md`** như một file Knowledge (cùng 8 file `knowledge/`).
 >
 > **Gemini Gems và Claude Projects không cần bản này** — dán bản đầy đủ cho chất lượng cao hơn.
 

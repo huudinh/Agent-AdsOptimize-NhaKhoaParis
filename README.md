@@ -158,6 +158,8 @@ Generator **chặn build** nếu: tổng tỷ trọng ngân sách ≠ 100% · t�
 | [prompts/prompt-sinh-bo-tu-khoa-zone.md](prompts/prompt-sinh-bo-tu-khoa-zone.md) | 5 prompt mẫu: tạo zone · mở rộng · rà soát · đổi brand | ✅ |
 | [prompts/prompt-build-landing-page.md](prompts/prompt-build-landing-page.md) | 5 prompt mẫu dựng LDP **mobile-first** từ sheet 4 Hành trình KH · checklist giao hàng | ✅ |
 | [prompts/prompt-quy-trinh-tron-goi.md](prompts/prompt-quy-trinh-tron-goi.md) | **Dây chuyền 6 bước**: từ khóa → ưu tiên → insight → mẫu QC → layout → HTML · 3 chốt dừng | ✅ |
+| [template/NKP _ Google Ads _ Bộ từ khoá Trồng răng Implant.xlsx](template/) | **File mẫu gốc** của workbook 5 sheet — generator dựng lại đúng file này | 📦 |
+| [template/family-care.html](template/family-care.html) | **Trang production** đã lưu — nguồn của khung trang + Design System v3.1 | 📦 |
 | [doc/01-cai-dat.md](doc/01-cai-dat.md) | Tên & mô tả · cài 3 nền tảng · smoke test · xử lý sự cố | ✅ |
 | [doc/02-cau-lenh.md](doc/02-cau-lenh.md) | Câu lệnh 3 mode · prompt mẫu · điều Agent sẽ từ chối | ✅ |
 | [doc/03-output-mau.md](doc/03-output-mau.md) | Output mẫu đủ 3 mode · dấu hiệu đúng/sai | ✅ |

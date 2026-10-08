@@ -53,7 +53,7 @@ Tối ưu quảng cáo nha khoa: sinh mẫu QC từ từ khóa, dựng landing p
 
 ---
 
-# 2. Bảy file tri thức
+# 2. Tám file tri thức
 
 | File | Vai trò |
 |---|---|
@@ -64,10 +64,13 @@ Tối ưu quảng cáo nha khoa: sinh mẫu QC từ từ khóa, dựng landing p
 | `np-engine-win-ad.md` | B1–B7 · 8 archetype · ma trận A/B · chấm 12 · template QC |
 | `np-khung-landing.md` | Khung LDP A/B · khung trang chuẩn · Design System v3.1 · micro-conversion |
 | `np-chan-doan-chi-so.md` | WIN bằng số · bảng chẩn đoán · thư viện hook |
+| `np-ppl-kh-trung-tam.md` | PPL lấy KH làm trung tâm · 4 ZONE · lớp chân dung KH |
 
 Thứ tự đọc: **pháp lý trước, dữ liệu sau.**
 
 > **Không upload thư mục `doc/`** — tài liệu cho người đọc. Đặc biệt **không upload `doc/v1-ban-goc-1-file.md`**: bản cũ, nạp vào sẽ mâu thuẫn với bộ não mới.
+>
+> **Cũng không upload `template/`** — hai file mẫu gốc (`.xlsx` bộ từ khoá và `family-care.html`) để người đối chiếu, không phải tri thức. Nội dung cần thiết của chúng đã được chắt vào `np-khung-landing.md`; nạp thêm bản thô chỉ làm loãng.
 
 ---
 
