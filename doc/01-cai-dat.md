@@ -31,25 +31,25 @@ Tối ưu quảng cáo nha khoa: sinh mẫu QC từ từ khóa, dựng landing p
 1. Create a GPT → tab *Configure*.
 2. **Name** + **Description:** dán từ §0.
 3. **Instructions:** dán khối ▼▲ của [`SYSTEM-PROMPT-NGAN.md`](../SYSTEM-PROMPT-NGAN.md) (**7.952 ký tự**).
-4. **Knowledge:** upload **7 file** trong `knowledge/` **+ thêm cả `SYSTEM-PROMPT.md`**.
+4. **Knowledge:** upload **8 file** trong `knowledge/` **+ thêm cả `SYSTEM-PROMPT.md`**.
 
 > ⚠️ **Bản ngắn chỉ dư 48 ký tự so với hạn mức.** Nếu bạn sửa bản ngắn, **phải đếm lại ký tự** trước khi dán — thêm một câu là vượt, và phần bị cắt sẽ là mục cuối (quy tắc phản hồi + tự kiểm).
 
 ## Gemini (Gems)
 1. Gem mới → **Tên** + **Nội dung mô tả** từ §0.
 2. **Chỉ dẫn:** dán khối ▼▲ của [`SYSTEM-PROMPT.md`](../SYSTEM-PROMPT.md) — bản đầy đủ.
-3. **Tri thức:** upload 7 file trong `knowledge/`.
+3. **Tri thức:** upload 8 file trong `knowledge/`.
 
 ## Claude (Project)
 1. New project → tên từ §0.
 2. **Instructions:** dán khối ▼▲ của [`SYSTEM-PROMPT.md`](../SYSTEM-PROMPT.md) — bản đầy đủ.
-3. **Project knowledge:** add 7 file trong `knowledge/`.
+3. **Project knowledge:** add 8 file trong `knowledge/`.
 
 | Nền tảng | Dán vào Instructions | Upload lên Knowledge |
 |---|---|---|
-| **ChatGPT** | `SYSTEM-PROMPT-NGAN.md` (7.952) | 7 file `knowledge/` **+ `SYSTEM-PROMPT.md`** |
-| **Gemini** | `SYSTEM-PROMPT.md` (15.629) | 7 file `knowledge/` |
-| **Claude** | `SYSTEM-PROMPT.md` (15.629) | 7 file `knowledge/` |
+| **ChatGPT** | `SYSTEM-PROMPT-NGAN.md` (7.976) | 8 file `knowledge/` **+ `SYSTEM-PROMPT.md`** |
+| **Gemini** | `SYSTEM-PROMPT.md` (19.690) | 8 file `knowledge/` |
+| **Claude** | `SYSTEM-PROMPT.md` (19.690) | 8 file `knowledge/` |
 
 ---
 
@@ -62,7 +62,7 @@ Tối ưu quảng cáo nha khoa: sinh mẫu QC từ từ khóa, dựng landing p
 | `np-chan-dung-hanh-trinh.md` | 3 rào cản đặc thù nha khoa · phễu 6 giai đoạn |
 | `np-cong-win-tu-khoa.md` | Cổng 2/3 · phiếu chấm · gom nhóm |
 | `np-engine-win-ad.md` | B1–B7 · 8 archetype · ma trận A/B · chấm 12 · template QC |
-| `np-khung-landing.md` | Khung LDP A/B · Design System Paris v2.0 · micro-conversion |
+| `np-khung-landing.md` | Khung LDP A/B · Design System Paris v3.0 · micro-conversion |
 | `np-chan-doan-chi-so.md` | WIN bằng số · bảng chẩn đoán · thư viện hook |
 
 Thứ tự đọc: **pháp lý trước, dữ liệu sau.**

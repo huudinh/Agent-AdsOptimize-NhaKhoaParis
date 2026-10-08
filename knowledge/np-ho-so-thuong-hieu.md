@@ -12,28 +12,62 @@ Version: 2.0 — kế thừa mục 3.3 bản v1.3
 - Header (màu): `https://nhakhoaparis.vn/wp-content/themes/ParisBrand2024/Module/Header/header_pr_2_0_0/images/logo.png`
 - Footer (trắng, nền tối): `https://nhakhoaparis.vn/wp-content/themes/ParisBrand2024/Module/Footer/footer_pr_2_0_0/images/logo-white.png`
 
-**Màu — Design System Paris v2.0:**
+**Màu — Design System Paris v3.0** *(dẫn xuất từ Bộ nhận diện thương hiệu, mục 4.1)*
 
-| Vai trò | Mã |
-|---|---|
-| Primary (`--blue`) | `#0058a1` |
-| Secondary | `#10B1E7` |
-| Accent | `#6DCCDD` |
-| Soft BG | `#E2F4FD` |
-| Highlight | `#EE305B` |
-| Danger | `#CF2033` |
-| Soft Pink | `#F58E8F` |
-| Nền | `#FFFFFF` |
-| Text | `#1D2939` |
-| Sub text | `#667085` |
-| Border | `#E4E7EC` |
+Ba màu gốc của bộ NDTH, **không được đổi**:
 
-**Tỷ lệ bắt buộc: 80% trắng / 15% xanh / 5% accent** — cảm hứng cờ Pháp. **Không nền toàn xanh.**
-- **Gradient xanh chủ đạo:** `linear-gradient(135deg, var(--blue) 0%, #1A74B8 55%, var(--blue) 100%)`
-- **Text giá:** `#ed2805` (đỏ)
-- **Nhấn trên nền xanh:** `#ffc229` (vàng)
+| Màu gốc | HEX | RGB | CMYK |
+|---|---|---|---|
+| **Cerulean Blue** | `#2A52BE` | 42, 82, 190 | 78, 57, 0, 25 |
+| **Pantone Red 032 C** | `#ED2E38` | 237, 47, 57 | 0, 96, 82, 0 |
+| **White** | `#FFFFFF` | 255, 255, 255 | 0, 0, 0, 0 |
 
-**Typography:** Heading **Bricolage Grotesque** (700/800) · Body **Oxy Vietnam** (400/500) · Accent **SVN Rosellinda Alyamore** (chỉ banner/hero/tên dịch vụ). Line-height 150%.
+Thang màu đầy đủ cho giao diện số, dẫn xuất từ ba màu trên:
+
+| Vai trò | Mã | Dùng cho |
+|---|---|---|
+| **Primary** (`--blue`) | `#2A52BE` | **Cerulean Blue — bộ NDTH.** Nền nút chính · heading trên nền trắng |
+| Primary dark | `#224298` | Hover / active của nút chính |
+| Secondary | `#6382D6` | Viền · icon · nền phụ. **Không đặt chữ nhỏ lên** (3.7:1) |
+| Accent | `#A4B3DD` | Đường kẻ · nền nhạt · biểu đồ. **Không dùng cho chữ** |
+| Soft BG | `#EDF0F7` | Nền section nhạt |
+| **Highlight** | `#ED2E38` | **Pantone Red 032 C — bộ NDTH.** CTA phụ · nhãn ưu đãi · giá cỡ lớn |
+| Danger | `#C3131C` | Đỏ sâu: chữ đỏ cỡ nhỏ · lỗi form |
+| Soft Red | `#FACFD1` | Nền badge ưu đãi |
+| Nền | `#FFFFFF` | **White — bộ NDTH** |
+| Text | `#1D2939` | |
+| Sub text | `#667085` | |
+| Border | `#E4E7EC` | |
+
+**Tỷ lệ bắt buộc: 80% trắng / 15% xanh / 5% đỏ** — cảm hứng cờ Pháp. **Không nền toàn xanh.**
+- **Gradient xanh chủ đạo:** `linear-gradient(135deg, #2A52BE 0%, #5273CE 55%, #2A52BE 100%)`
+- **Text giá:** `#ED2E38` khi cỡ ≥ 18,66px đậm · `#C3131C` khi nhỏ hơn (để đạt AA)
+- **Nhấn trên nền xanh:** `#FFFFFF` — trắng là màu thứ ba của bộ NDTH
+- ⛔ **Không đặt đỏ `#ED2E38` lên nền xanh `#2A52BE`** — tương phản 1,66:1, chữ gần như biến mất
+
+**Typography — một font cho cả hệ: `Bricolage Grotesque`**
+
+Variable font, **hỗ trợ tiếng Việt đầy đủ** (gồm ký tự `₫`). Trục: `opsz` 12–96 · `wght` 200–800 · `wdth` 75–100.
+
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+```
+
+| Vai trò | Weight | Ghi chú |
+|---|---|---|
+| H1 · H2 | **800** | line-height 110–120% |
+| H3 · H4 | **700** | |
+| Sub-heading · nhãn · chữ trên nút | **600** | |
+| Body nhấn · số liệu | **500** | |
+| Body | **400** | **≥ 16px trên mobile** |
+
+- `font-optical-sizing: auto` để trục `opsz` tự chạy theo cỡ chữ.
+- Line-height **150%** cho body.
+- Fallback: `"Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif`.
+
+> ⚠️ **Đã bỏ** `Oxy Vietnam` và `SVN Rosellinda Alyamore` khỏi hệ web — bộ nhận diện chốt một font duy nhất. Nếu ấn phẩm in vẫn dùng font chữ viết tay cho banner, ghi rõ ở đây trước khi dựng POSM.
 
 **Giọng:** chuyên nghiệp – chuẩn Pháp – cao cấp – hiện đại – thân thiện; y khoa nhưng **không khô cứng**. Không dùng từ cấm / so sánh tuyệt đối.
 

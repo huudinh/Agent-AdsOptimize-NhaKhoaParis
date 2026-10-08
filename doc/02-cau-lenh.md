@@ -70,7 +70,7 @@ Phần gỡ 3 rào cản viết kỹ, nhất là nỗi ngờ về mài răng th�
 ## 3.3 Dựng thẳng HTML
 ```
 MODE 2 — dựng HTML single-file cho landing Invisalign, giai đoạn 4.
-Theo Design System Paris v2.0, tỷ lệ 80/15/5, có sticky CTA mobile.
+Theo Design System Paris v3.0, tỷ lệ 80/15/5, có sticky CTA mobile.
 ```
 
 ## 3.4 Thêm micro-conversion

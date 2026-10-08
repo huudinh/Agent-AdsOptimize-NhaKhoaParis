@@ -1,6 +1,6 @@
 # 🦷 ADS OPTIMIZE — Tối ưu quảng cáo hiệu suất (Nha khoa Paris)
 
-> Version 2.0 · AI **sinh mẫu quảng cáo win · dựng landing page · chẩn đoán số liệu ADS + GA** cho **Hệ thống Nha khoa Tiêu chuẩn Pháp đầu tiên tại Việt Nam** — làm theo chỉ số, không làm theo cảm tính.
+> Version 2.2 · AI **sinh mẫu quảng cáo win · dựng landing page · chẩn đoán số liệu ADS + GA** cho **Hệ thống Nha khoa Tiêu chuẩn Pháp đầu tiên tại Việt Nam** — làm theo chỉ số, không làm theo cảm tính.
 
 Theo công thức HCI **R·M·K·W·O**. Kiến trúc **BRAIN brand-neutral** ([`SYSTEM-PROMPT.md`](SYSTEM-PROMPT.md)) + **MODULE thương hiệu tách riêng** ([`knowledge/np-ho-so-thuong-hieu.md`](knowledge/np-ho-so-thuong-hieu.md)) → đổi brand chỉ cần thay module.
 
@@ -36,13 +36,14 @@ Khách nha khoa mua **chức năng + sự tự tin** — ăn nhai tốt lại, h
 
 ---
 
-## Ba chế độ
+## Bốn chế độ
 
 | Mode | Làm gì | Input tối thiểu | Đầu ra |
 |---|---|---|---|
 | **1 · WIN-AD** | Từ từ khóa → mẫu QC Google RSA + Meta | từ khóa + dịch vụ | 15 headline + 4 description + 3–5 biến thể Meta + bảng chấm WIN + kế hoạch test |
-| **2 · LDP-BUILD** | Từ từ khóa → landing loại A hoặc B | cụm từ khóa + dịch vụ | blueprint 13 section + copy, hoặc HTML single-file theo Design System Paris v2.0 |
+| **2 · LDP-BUILD** | Từ từ khóa → landing loại A hoặc B | cụm từ khóa + dịch vụ | blueprint 13 section + copy, hoặc HTML single-file theo Design System Paris v3.0 |
 | **3 · LDP-ADVISOR** | Đọc ADS + GA → chẩn đoán | CTR·CPC·CPL·impression + scroll·form·booking | điểm nghẽn + 3 quyết định kèm ngưỡng và action |
+| **4 · KEYWORD-ZONE** | Từ 1 ZONE dịch vụ → bộ từ khóa theo chân dung + hành trình | tên ZONE + ngân sách/tháng | chân dung KH · hành trình S1–S6 · chiến dịch kèm tỷ trọng ngân sách · 90–130 từ khóa · phủ định |
 
 ---
 
@@ -88,8 +89,8 @@ Khách nha khoa mua **chức năng + sự tự tin** — ăn nhai tốt lại, h
 
 1. Tạo 1 Project / GPT / Gem mới. Tên và mô tả ngắn: xem [`doc/01-cai-dat.md` §0](doc/01-cai-dat.md).
 2. **Instructions:** dán khối ▼▲ trong [`SYSTEM-PROMPT.md`](SYSTEM-PROMPT.md) — riêng **ChatGPT** dùng [`SYSTEM-PROMPT-NGAN.md`](SYSTEM-PROMPT-NGAN.md).
-3. **Knowledge:** upload 7 file `.md` trong [`knowledge/`](knowledge/).
-4. Gọi mode: `MODE 1` · `MODE 2` · `MODE 3` — hoặc cứ nói bằng lời thường.
+3. **Knowledge:** upload 8 file `.md` trong [`knowledge/`](knowledge/).
+4. Gọi mode: `MODE 1` · `MODE 2` · `MODE 3` · `MODE 4` — hoặc cứ nói bằng lời thường.
 
 **Câu lệnh mẫu:**
 ```
@@ -99,19 +100,52 @@ qua cổng thì sinh mẫu Google RSA + Meta.
 
 ---
 
+## 4 · Bộ từ khoá theo ZONE — sinh file Excel từ hành trình khách
+
+> `MODE 4` trong bộ não (§12) lo phần nội dung; phần dưới đây là công cụ xuất file Excel cho cùng quy trình đó.
+
+Phương pháp luận **lấy khách hàng làm trung tâm**: chọn **người** trước, chọn **từ khóa** sau.
+
+```
+ZONE → chân dung KH → hành trình S1–S6 → cụm truy vấn ưu tiên P1/P2/P3 → cụm nội dung → thực thi
+```
+
+1 ZONE = 1 file JSON trong [`zones/`](zones/) = 1 workbook 5 sheet trong `out/`.
+
+```bash
+pip install openpyxl
+python tools/build_keyword_workbook.py zones/implant.json
+```
+
+Tạo zone mới: dán prompt trong [`prompts/prompt-sinh-bo-tu-khoa-zone.md`](prompts/prompt-sinh-bo-tu-khoa-zone.md), lưu JSON vào `zones/`, chạy lại lệnh trên.
+
+Generator **chặn build** nếu: tổng tỷ trọng ngân sách ≠ 100% · từ khóa trỏ tới chiến dịch/landing/chân dung chưa khai báo · có Broad match · trùng từ khóa × kiểu khớp · thông điệp chứa **từ cấm quảng cáo y tế**.
+
+> Sửa nội dung thì sửa JSON rồi build lại — **không sửa thẳng `.xlsx`**, lần build sau sẽ ghi đè.
+
+**Từ workbook sang landing page:** bảng Landing ở sheet 4 ghi sẵn *Loại khung (A/B) · Chặng · Chân dung · Rào cản gỡ chính* cho từng LP — đủ đầu vào cho [`prompts/prompt-build-landing-page.md`](prompts/prompt-build-landing-page.md). LDP mặc định **mobile-first, single-file HTML**, tham chiếu trình bày từ `/trong-rang-implant-paris.html` nhưng **cấu trúc nội dung lấy từ hành trình KH**, không copy khung của trang đó.
+
+---
+
 ## Tài liệu
 
 | File | Nội dung | Trạng thái |
 |---|---|---|
-| [SYSTEM-PROMPT.md](SYSTEM-PROMPT.md) | Bộ não — 17 mục · **15.629 ký tự** | ✅ |
-| [SYSTEM-PROMPT-NGAN.md](SYSTEM-PROMPT-NGAN.md) | Bản ngắn **7.952 ký tự** — chỉ cho **ChatGPT** · ⚠️ **chỉ dư 48 ký tự so với hạn mức 8.000, sửa phải đo lại** | ✅ |
+| [SYSTEM-PROMPT.md](SYSTEM-PROMPT.md) | Bộ não — 18 mục · **20.092 ký tự** | ✅ |
+| [SYSTEM-PROMPT-NGAN.md](SYSTEM-PROMPT-NGAN.md) | Bản ngắn **7.972 ký tự** — chỉ cho **ChatGPT** · ⚠️ **chỉ dư 28 ký tự so với hạn mức 8.000, sửa phải đo lại** | ✅ |
 | [knowledge/np-rao-phap-ly.md](knowledge/np-rao-phap-ly.md) | Từ cấm → từ đúng · **luật chữ "chính hãng"** · luật ảnh · HITL | ✅ |
-| [knowledge/np-ho-so-thuong-hieu.md](knowledge/np-ho-so-thuong-hieu.md) | Định vị · Design System v2.0 · đối tác hãng · bác sĩ · taxonomy *(module swappable)* | ✅ |
+| [knowledge/np-ho-so-thuong-hieu.md](knowledge/np-ho-so-thuong-hieu.md) | Định vị · **bộ nhận diện: màu + font** · Design System v3.0 · đối tác hãng · bác sĩ · taxonomy *(module swappable)* | ✅ |
 | [knowledge/np-chan-dung-hanh-trinh.md](knowledge/np-chan-dung-hanh-trinh.md) | Insight · 3 rào cản đặc thù nha khoa · phễu 6 giai đoạn | ✅ |
 | [knowledge/np-cong-win-tu-khoa.md](knowledge/np-cong-win-tu-khoa.md) | Cổng 2/3 · phiếu chấm · gom nhóm · lưu ý từ khóa ngành nha | ✅ |
 | [knowledge/np-engine-win-ad.md](knowledge/np-engine-win-ad.md) | B1–B7 · 8 archetype hook · ma trận A/B · chấm điểm 12 · template QC | ✅ |
-| [knowledge/np-khung-landing.md](knowledge/np-khung-landing.md) | Khung LDP A/B 13 section · **Design System Paris v2.0** · micro-conversion | ✅ |
+| [knowledge/np-khung-landing.md](knowledge/np-khung-landing.md) | Khung LDP A/B 13 section · **Design System Paris v3.0** · micro-conversion | ✅ |
 | [knowledge/np-chan-doan-chi-so.md](knowledge/np-chan-doan-chi-so.md) | WIN bằng số · bảng chẩn đoán · thư viện hook | ✅ |
+| [knowledge/np-ppl-kh-trung-tam.md](knowledge/np-ppl-kh-trung-tam.md) | **PPL lấy KH làm trung tâm** · 4 ZONE · lớp chân dung KH · ánh xạ sang workbook | ✅ |
+| [tools/build_keyword_workbook.py](tools/build_keyword_workbook.py) | Generator: 1 zone JSON → 1 file `.xlsx` 5 sheet, kèm cổng kiểm tra | ✅ |
+| [zones/README.md](zones/README.md) | Schema 17 khối của zone config · trật tự điền bắt buộc | ✅ |
+| [zones/implant.json](zones/implant.json) | ZONE Implant hoàn chỉnh: 6 chân dung · 11 chiến dịch · 123 từ khoá | ✅ |
+| [prompts/prompt-sinh-bo-tu-khoa-zone.md](prompts/prompt-sinh-bo-tu-khoa-zone.md) | 5 prompt mẫu: tạo zone · mở rộng · rà soát · đổi brand | ✅ |
+| [prompts/prompt-build-landing-page.md](prompts/prompt-build-landing-page.md) | 5 prompt mẫu dựng LDP **mobile-first** từ sheet 4 Hành trình KH · checklist giao hàng | ✅ |
 | [doc/01-cai-dat.md](doc/01-cai-dat.md) | Tên & mô tả · cài 3 nền tảng · smoke test · xử lý sự cố | ✅ |
 | [doc/02-cau-lenh.md](doc/02-cau-lenh.md) | Câu lệnh 3 mode · prompt mẫu · điều Agent sẽ từ chối | ✅ |
 | [doc/03-output-mau.md](doc/03-output-mau.md) | Output mẫu đủ 3 mode · dấu hiệu đúng/sai | ✅ |
