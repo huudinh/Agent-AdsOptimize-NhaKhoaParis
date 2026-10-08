@@ -98,6 +98,17 @@ MODE 1 — từ khóa "trồng răng implant trả góp hà nội". Chấm cổn
 qua cổng thì sinh mẫu Google RSA + Meta.
 ```
 
+**Chạy cả dây chuyền trong một lần?** Dán prompt trong
+[`prompts/prompt-quy-trinh-tron-goi.md`](prompts/prompt-quy-trinh-tron-goi.md):
+
+```
+B1 bộ từ khóa → B2 ưu tiên → B3 insight → B4 mẫu QC → B5 layout → B6 HTML
+   └── MODE 4 ────┘           └─── MODE 1 ───┘          └─── MODE 2 ───┘
+             ▲CHỐT 1                      ▲CHỐT 2              ▲CHỐT 3
+```
+
+Agent dừng ở 3 chốt để bạn duyệt, không chạy một mạch tới cuối.
+
 ---
 
 ## 4 · Bộ từ khoá theo ZONE — sinh file Excel từ hành trình khách
@@ -146,6 +157,7 @@ Generator **chặn build** nếu: tổng tỷ trọng ngân sách ≠ 100% · t�
 | [zones/implant.json](zones/implant.json) | ZONE Implant hoàn chỉnh: 6 chân dung · 11 chiến dịch · 123 từ khoá | ✅ |
 | [prompts/prompt-sinh-bo-tu-khoa-zone.md](prompts/prompt-sinh-bo-tu-khoa-zone.md) | 5 prompt mẫu: tạo zone · mở rộng · rà soát · đổi brand | ✅ |
 | [prompts/prompt-build-landing-page.md](prompts/prompt-build-landing-page.md) | 5 prompt mẫu dựng LDP **mobile-first** từ sheet 4 Hành trình KH · checklist giao hàng | ✅ |
+| [prompts/prompt-quy-trinh-tron-goi.md](prompts/prompt-quy-trinh-tron-goi.md) | **Dây chuyền 6 bước**: từ khóa → ưu tiên → insight → mẫu QC → layout → HTML · 3 chốt dừng | ✅ |
 | [doc/01-cai-dat.md](doc/01-cai-dat.md) | Tên & mô tả · cài 3 nền tảng · smoke test · xử lý sự cố | ✅ |
 | [doc/02-cau-lenh.md](doc/02-cau-lenh.md) | Câu lệnh 3 mode · prompt mẫu · điều Agent sẽ từ chối | ✅ |
 | [doc/03-output-mau.md](doc/03-output-mau.md) | Output mẫu đủ 3 mode · dấu hiệu đúng/sai | ✅ |
