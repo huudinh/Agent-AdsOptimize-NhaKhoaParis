@@ -77,7 +77,8 @@ XUẤT: hồ sơ insight + danh sách câu nói thật + rào cản chính + b�
 
 ─────────────────────────────────────────────────────────────
 B4 · THÔNG ĐIỆP — MẪU QUẢNG CÁO GOOGLE ADS   (MODE 1, B2→B7)
-  - Chọn góc A (AIDA) hay B (PAS) + nói rõ vì sao
+  - Chọn khung A1 (khát khao) hay A2 (trả lời trước) + nói rõ vì sao.
+    Landing chạy Ads luôn là AIDA; PAS chỉ cho SEO/GEO/social nguội
   - >=3 hook KHÁC ARCHETYPE, mỗi hook = 1 insight B3 + 1 bằng chứng thật
   - Google RSA: 15 headline <=30 ký tự + 4 description <=90 + path
   - Chấm WIN 6 tiêu chí x0-2, tổng __/12

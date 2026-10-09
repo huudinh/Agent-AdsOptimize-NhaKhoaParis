@@ -85,7 +85,7 @@ Khuyến nghị **4–7 chân dung**. Ít hơn 4 thường là chưa tách đủ
 
 | Khoá | Ghi chú |
 |---|---|
-| `loai` | Khung nội dung: `A - AIDA`, `B - PAS`, hoặc `Công cụ` / `Trang CRM` nếu không chạy landing chốt. Quy tắc chọn: xem `np-khung-landing.md` |
+| `loai` | Khung nội dung: `A1 - AIDA khát khao`, `A2 - AIDA trả lời trước` (từ khoá nỗi sợ), hoặc `Công cụ` / `Trang CRM` nếu không chạy landing chốt. **Landing chạy Ads không dùng PAS** — PAS chỉ cho SEO/GEO/social nguội. Quy tắc chọn: xem `np-khung-landing.md` |
 | `chang` | Chặng trang này phục vụ, vd `S3` |
 | `chan_dung` | Mã `CDx`, có thể nhiều mã |
 | `rao_can` | Rào cản **trang này phải gỡ** — section "Gỡ 3 rào cản" bám vào đây, không gỡ chung chung cả ba |

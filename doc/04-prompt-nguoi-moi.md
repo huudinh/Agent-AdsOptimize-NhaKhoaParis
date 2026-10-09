@@ -113,16 +113,16 @@ Khách đang [TÌM GÌ / LO GÌ].
 ## 11 · Trang cho khách đang chọn chỗ
 > Làm giúp mình **trang bán hàng cho răng sứ thẩm mỹ**. Khách đã muốn làm, đang so sánh xem làm ở đâu.
 
-**Nhận được:** bố cục từng phần + nội dung, theo khung **AIDA** — bán giấc mơ nụ cười. Agent nói rõ vì sao chọn khung đó, và hỏi bạn muốn bản chữ hay bản HTML chạy được.
+**Nhận được:** bố cục từng phần + nội dung, theo khung **A1 — AIDA khát khao**, bán giấc mơ nụ cười. Agent nói rõ vì sao chọn khung đó, và hỏi bạn muốn bản chữ hay bản HTML chạy được.
 
 ---
 
 ## 12 · Trang cho khách đang sợ
 > Khách của mình hay lo **bọc sứ sẽ hỏng răng thật**. Làm trang bán hàng cho nhóm này, phần gỡ nỗi lo và phần nói về hãng sứ viết kỹ giúp mình.
 
-**Nhận được:** trang theo khung **PAS** — gọi tên nỗi đau trước, rồi mới nói giải pháp.
+**Nhận được:** trang theo khung **A2 — trả lời trước**: hero gọi đúng nỗi lo, rồi **trả lời ngay** ở phần kế tiếp, sau đó mới tới bằng chứng.
 
-**Vì sao hay dùng hơn AIDA:** phần lớn khách nha khoa xuất phát từ **nỗi đau**, không phải từ khát khao. Nhóm từ khóa nỗi sợ cũng ít đối thủ đấu giá hơn.
+**Vì sao không khoét sâu nỗi sợ:** khách đã bấm quảng cáo nên bạn **đã trả tiền cho cú click đó** — trì hoãn câu trả lời để khoét sâu chỉ làm họ thoát ra. Và quảng cáo dịch vụ khám chữa bệnh **không được gây hoang mang**, nên khoét sâu nỗi sợ y khoa còn là rủi ro pháp lý. Khung khoét sâu (PAS) để dành cho **bài SEO và nội dung GEO**, nơi người đọc chưa chủ động tìm.
 
 ---
 

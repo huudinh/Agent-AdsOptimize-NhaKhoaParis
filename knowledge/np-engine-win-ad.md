@@ -20,8 +20,10 @@ Xuất kèm nguồn mỗi câu. Không tìm được → nói rõ **"chưa có v
 ---
 
 ## B2 · Chọn góc + khung
-- **Góc A — khát khao nụ cười đẹp** → **AIDA**. Dùng cho: răng sứ thẩm mỹ · Veneer · niềng để đẹp · tẩy trắng.
-- **Góc B — nỗi đau răng miệng** → **PAS**. Dùng cho: mất răng → Implant · hô/móm/khấp khểnh → niềng · răng ố/sâu/đau → tẩy trắng/tủy · răng khôn lệch → nhổ.
+> **Góc ≠ khung landing.** Góc là *nói về cái gì* (khát khao hay nỗi đau) — áp cho mẫu quảng cáo. Khung là *nói theo thứ tự nào* — áp cho landing, và chọn theo nguồn traffic (`np-khung-landing.md`). Góc B vẫn chạy trên landing AIDA.
+
+- **Góc A — khát khao nụ cười đẹp.** Dùng cho: răng sứ thẩm mỹ · Veneer · niềng để đẹp · tẩy trắng.
+- **Góc B — nỗi đau răng miệng.** Dùng cho: mất răng → Implant · hô/móm/khấp khểnh → niềng · răng ố/sâu/đau → tẩy trắng/tủy · răng khôn lệch → nhổ.
 
 **1 nội dung = 1 góc chính.**
 

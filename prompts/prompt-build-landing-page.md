@@ -10,7 +10,7 @@ Nguồn nội dung: **sheet 4 "Hành trình KH"** của workbook zone (`out/NKP 
 
 | ✅ Lấy từ trang tham chiếu | ❌ Không lấy |
 |---|---|
-| Cách trình bày trên mobile: nhịp section, mật độ chữ, kích thước nút | **Khung nội dung.** Trang này đang chạy AIDA. Phần lớn LP của zone Implant phải là **PAS** vì xuất phát từ nỗi đau mất răng |
+| Cách trình bày trên mobile: nhịp section, mật độ chữ, kích thước nút | **Nội dung từng section** — lấy từ hành trình KH, không copy. Khung thì trang này **đã đúng**: landing chạy Ads là AIDA |
 | — | **Khung trang** (header/footer/container) lấy từ `family-care.html`, không lấy từ trang này |
 | Giọng thương hiệu, cách gọi tên dịch vụ | **Thứ tự section.** Thứ tự lấy từ `np-khung-landing.md` theo loại A/B |
 | Cách hiển thị giá dạng card "Chỉ từ X triệu" | **Con số cứng.** Giá · số ca · năm kinh nghiệm · bảo hành đều là dữ liệu động, đọc lại lúc chạy |

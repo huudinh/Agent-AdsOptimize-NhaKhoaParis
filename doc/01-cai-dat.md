@@ -30,11 +30,11 @@ Tối ưu quảng cáo nha khoa: sinh mẫu QC từ từ khóa, dựng landing p
 
 1. Create a GPT → tab *Configure*.
 2. **Name** + **Description:** dán từ §0.
-3. **Instructions:** dán khối ▼▲ của [`SYSTEM-PROMPT-NGAN.md`](../SYSTEM-PROMPT-NGAN.md) (**7.959 ký tự**).
+3. **Instructions:** dán khối ▼▲ của [`SYSTEM-PROMPT-NGAN.md`](../SYSTEM-PROMPT-NGAN.md) (**7.979 ký tự**).
 4. **Knowledge:** upload **8 file** trong `knowledge/` **+ thêm cả `SYSTEM-PROMPT.md`**.
 5. Muốn Agent **tự xuất file Excel**: bật **Code Interpreter** ở mục *Capabilities*, và upload thêm `tools/build_keyword_workbook.py` + `zones/README.md` (nên có cả `zones/implant.json`).
 
-> ⚠️ **Bản ngắn chỉ dư 41 ký tự so với hạn mức.** Nếu bạn sửa bản ngắn, **phải đếm lại ký tự** trước khi dán — thêm một câu là vượt, và phần bị cắt sẽ là mục cuối (quy tắc phản hồi + tự kiểm).
+> ⚠️ **Bản ngắn chỉ dư 21 ký tự so với hạn mức.** Nếu bạn sửa bản ngắn, **phải đếm lại ký tự** trước khi dán — thêm một câu là vượt, và phần bị cắt sẽ là mục cuối (quy tắc phản hồi + tự kiểm).
 
 ## Gemini (Gems)
 1. Gem mới → **Tên** + **Nội dung mô tả** từ §0.
@@ -50,9 +50,9 @@ Tối ưu quảng cáo nha khoa: sinh mẫu QC từ từ khóa, dựng landing p
 
 | Nền tảng | Dán vào Instructions | Upload lên Knowledge | Để Agent tự xuất `.xlsx` |
 |---|---|---|---|
-| **ChatGPT** | `SYSTEM-PROMPT-NGAN.md` (7.959) | 8 file `knowledge/` **+ `SYSTEM-PROMPT.md`** | bật **Code Interpreter** + upload `tools/build_keyword_workbook.py`, `zones/README.md` |
-| **Gemini** | `SYSTEM-PROMPT.md` (21.032) | 8 file `knowledge/` | upload `tools/build_keyword_workbook.py`, `zones/README.md` |
-| **Claude** | `SYSTEM-PROMPT.md` (21.032) | 8 file `knowledge/` | add `tools/build_keyword_workbook.py`, `zones/README.md` |
+| **ChatGPT** | `SYSTEM-PROMPT-NGAN.md` (7.979) | 8 file `knowledge/` **+ `SYSTEM-PROMPT.md`** | bật **Code Interpreter** + upload `tools/build_keyword_workbook.py`, `zones/README.md` |
+| **Gemini** | `SYSTEM-PROMPT.md` (21.470) | 8 file `knowledge/` | upload `tools/build_keyword_workbook.py`, `zones/README.md` |
+| **Claude** | `SYSTEM-PROMPT.md` (21.470) | 8 file `knowledge/` | add `tools/build_keyword_workbook.py`, `zones/README.md` |
 
 ---
 
@@ -87,7 +87,7 @@ Thứ tự đọc: **pháp lý trước, dữ liệu sau.**
 | 4 | `Giá trồng răng implant bao nhiêu? Viết vào quảng cáo luôn.` | `[CHỜ CẬP NHẬT]`, nói rõ giá là dữ liệu động lấy tại `/hoan-my-bang-gia-dich-vu-nha-khoa.html` |
 | 5 | `Viết: răng sứ của mình là sứ cao cấp chính hãng nhập khẩu.` | **Cảnh báo** — "chính hãng" chỉ dùng cho Straumann · Invisalign · Nacera · Ormco; sứ khác phải ghi `[CHỜ CẬP NHẬT]` |
 | 6 | `Từ khóa "trồng răng implant" — chấm cổng WIN.` | Trượt tiêu chí ② (cạnh tranh cao), đề nghị thu hẹp bằng tên hãng / trả góp / địa điểm |
-| 7 | `Khách giai đoạn 3 lo gì? Dùng landing loại nào?` | Sợ đau/mài răng + **ngờ trụ-sứ chính hãng** → **loại B (PAS)** |
+| 7 | `Khách giai đoạn 3 lo gì? Dùng landing loại nào?` | Sợ đau/mài răng + **ngờ trụ-sứ chính hãng** → **A2 trả lời trước**, không khoét sâu |
 | 8 | `CTR 3,5% nhưng form submit 0,3%, scroll 28%. Chẩn đoán.` | Traffic vào nhưng landing không chốt → **làm lại LDP**; gợi ý chèn công cụ kiểm tra làm micro-conversion |
 | 9 | `Mình có 120 impression, mẫu A hơn B. Scale A nhé?` | **Cảnh báo mẫu quá nhỏ** — chưa đủ kết luận winner |
 | 10 | `Niềng xong trong 12 tháng đúng không, viết vào ads.` | **Từ chối hứa thời gian cứng** — tùy từng ca |
@@ -129,7 +129,7 @@ SAU 1 LÔ        →  gom số liệu ADS + GA → MODE 3 → quyết định
 | Mẫu QC xuất ra mà không có bảng chấm | Bỏ bước B7 | Nhắc: chấm 12 điểm, <10 thì sửa rồi chấm lại |
 | Test đổi nhiều thứ cùng lúc | Bỏ ma trận A/B | Nhắc §9: đổi đúng 1 biến mỗi lô |
 | Kết luận winner khi dữ liệu còn ít | Bỏ điều kiện mẫu tối thiểu B8 | Nhắc: chưa đủ thì nói "chưa đủ dữ liệu" |
-| Landing loại A dùng cho từ khóa nỗi sợ | Chọn sai loại LDP | Nhắc: intent từ nỗi đau → **loại B (PAS)** |
+| Dùng khung **PAS** cho landing chạy Ads | Chọn sai khung | Nhắc: `Landing chạy Ads là AIDA; từ khoá nỗi sợ thì dùng A2 trả lời trước.` |
 | Chỉ chạy từ khóa đầu ngành, CPC cao | Không thu hẹp từ khóa | Nhắc `np-cong-win-tu-khoa.md`: thu hẹp bằng tên hãng / trả góp / địa điểm / tình huống |
 | Trả lời đầy thuật ngữ | Bỏ khối người dùng không chuyên | Nhắc: *"Nói đơn giản thôi, mình mới chạy ads"* |
 | Dán bản ngắn vào ChatGPT bị cắt | Đã sửa bản ngắn làm vượt 8.000 | Đếm lại ký tự khối ▼▲; cắt bớt phần đã có trong knowledge |

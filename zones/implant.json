@@ -2586,7 +2586,7 @@
   "landing": [
     {
       "ma_ten": "LP1: Implant thương hiệu Paris",
-      "loai": "A - AIDA rút gọn",
+      "loai": "A1 - AIDA rút gọn",
       "chang": "S4",
       "chan_dung": "CD1, CD6",
       "rao_can": "NGỜ - kiểm tra uy tín lần cuối",
@@ -2596,7 +2596,7 @@
     },
     {
       "ma_ten": "LP2: Bảng giá + trả góp",
-      "loai": "A - AIDA rút gọn",
+      "loai": "A1 - AIDA rút gọn",
       "chang": "S4",
       "chan_dung": "CD6",
       "rao_can": "NGẠI - tổng chi phí và sợ phát sinh",
@@ -2606,7 +2606,7 @@
     },
     {
       "ma_ten": "LP3: Cơ sở + bác sĩ",
-      "loai": "A - AIDA rút gọn",
+      "loai": "A1 - AIDA rút gọn",
       "chang": "S4",
       "chan_dung": "CD1",
       "rao_can": "NGẠI - xa, khó sắp lịch + NGỜ tay nghề",
@@ -2616,7 +2616,7 @@
     },
     {
       "ma_ten": "LP4: Toàn hàm All-On 4/6",
-      "loai": "B - PAS",
+      "loai": "A1 - AIDA rút gọn",
       "chang": "S4",
       "chan_dung": "CD2, CD3",
       "rao_can": "NGẠI chi phí + NGỜ tuổi cao làm được không",
@@ -2626,7 +2626,7 @@
     },
     {
       "ma_ten": "LP5: Implant đơn lẻ",
-      "loai": "B - PAS",
+      "loai": "A2 - trả lời trước",
       "chang": "S2",
       "chan_dung": "CD1",
       "rao_can": "NGỜ - giải pháp nào hợp tình trạng của tôi",
@@ -2636,7 +2636,7 @@
     },
     {
       "ma_ten": "LP6: So sánh hãng trụ",
-      "loai": "B - PAS thiên so sánh",
+      "loai": "A2 - trả lời trước, thiên so sánh",
       "chang": "S3",
       "chan_dung": "CD1, CD6",
       "rao_can": "NGỜ - trụ trong miệng có đúng hãng không",
@@ -2646,11 +2646,11 @@
     },
     {
       "ma_ten": "LP7: Hỏi đáp bác sĩ (gỡ nỗi sợ)",
-      "loai": "B - PAS (trái tim của zone)",
+      "loai": "A2 - trả lời trước (trái tim của zone)",
       "chang": "S3",
       "chan_dung": "CD1, CD2",
       "rao_can": "SỢ đau + NGỜ đào thải",
-      "noi_dung": "Cấu trúc PAS. FAQ: đau không, đào thải không, bao lâu, bệnh nền, so sánh cầu răng. Video bác sĩ trả lời.",
+      "noi_dung": "Cấu trúc A2 - trả lời trước: hero gọi nỗi lo, trả lời ngay, không khoét sâu. FAQ: đau không, đào thải không, bao lâu, bệnh nền, so sánh cầu răng. Video bác sĩ trả lời.",
       "cta": "Hỏi bác sĩ qua Zalo",
       "micro": "Xem hết video bác sĩ"
     },
@@ -2666,7 +2666,7 @@
     },
     {
       "ma_ten": "LP9: Ca khó - tiêu xương, ghép xương",
-      "loai": "B - PAS",
+      "loai": "A2 - trả lời trước",
       "chang": "S2-S3",
       "chan_dung": "CD4",
       "rao_can": "NGỜ - ca khó của tôi có xử lý được không",
@@ -2676,7 +2676,7 @@
     },
     {
       "ma_ten": "LP10: Xử lý ca implant gặp sự cố",
-      "loai": "B - PAS",
+      "loai": "A2 - trả lời trước",
       "chang": "S3, S5",
       "chan_dung": "CD5",
       "rao_can": "NGỜ ở mức nặng nhất - đã mất niềm tin",

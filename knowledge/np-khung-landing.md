@@ -1,20 +1,34 @@
 # KHUNG LANDING PAGE & DESIGN SYSTEM PARIS v2.0
 Version: 2.0 — kế thừa mục 5.2 + MODE 2 bản v1.3
 
-## Chọn loại landing
+## Chọn khung landing — theo NGUỒN TRAFFIC trước, rồi mới tới intent
 
-| | **LOẠI A — Khách hàng làm đẹp** | **LOẠI B — Vấn đề khách hàng** |
+| | **Google Ads** (search trả phí) | **SEO · GEO · social nguội** |
 |---|---|---|
-| **Intent xuất phát** | Đã muốn nụ cười đẹp | Từ nỗi đau răng miệng |
 | **Khung** | **AIDA** | **PAS** — Vấn đề → Khoét sâu → Giải pháp |
-| **Mạnh nhất ở** | Giai đoạn 2 và 4 | **Giai đoạn 3 (cân nhắc & nỗi sợ)** |
-| **Dịch vụ điển hình** | Răng sứ thẩm mỹ · Veneer · niềng để đẹp · tẩy trắng | Mất răng → Implant · hô/móm → niềng · răng ố/sâu/đau → tẩy trắng/tủy · răng khôn lệch → nhổ |
+| **Vì sao** | Click **đã trả tiền** và từ khoá **đã khai intent** → vào thẳng message match, bằng chứng, CTA | Người đọc không tìm gì cả, **chưa thấy mình có vấn đề** → phải dựng nhận biết trước khi nói giải pháp |
 
-Chọn sai loại là nguyên nhân phổ biến nhất của **CTR ổn nhưng không ai điền form**.
+**Mọi landing chạy từ Google Ads mặc định là AIDA.** Hai biến thể, khác nhau ở *thứ tự*, không khác nhau ở *góc*:
+
+| | **A1 — khát khao** | **A2 — trả lời trước** |
+|---|---|---|
+| **Dùng cho** | S2 · S4 · thẩm mỹ: răng sứ · Veneer · niềng để đẹp · tẩy trắng | **S3 — từ khoá nỗi sợ**: "implant có đau không" · "bọc sứ có hại không" · "trụ nào tốt" |
+| **Hero** | Nụ cười đẹp + CTA | **Gọi đúng nỗi lo, rồi TRẢ LỜI NGAY** ngay dưới hero |
+| **Thứ tự** | Chú ý → quan tâm → khát khao → hành động | Nỗi lo → **câu trả lời** → bằng chứng gỡ Sợ–Ngờ–Ngại → ưu đãi/trả góp → CTA |
+
+⛔ **Không khoét sâu nỗi sợ trên landing chạy Ads.** Hai lý do, lý do sau nặng hơn:
+1. Click đã trả tiền và câu hỏi đã nêu rõ trong từ khoá — trì hoãn câu trả lời để khoét sâu chỉ làm **tăng bounce**.
+2. Quảng cáo dịch vụ KCB **không được gây hoang mang**. Khoét sâu nỗi sợ y khoa là **rủi ro tuân thủ**, không chỉ là copy dở.
+
+**PAS dùng ở đâu:** bài SEO · nội dung GEO (câu trả lời trong AI/chatbot) · post Facebook/TikTok nguội — nơi người đọc chưa chủ động tìm nên phải dựng nhận biết vấn đề trước.
+
+Chọn sai khung là nguyên nhân phổ biến nhất của **CTR ổn nhưng không ai điền form**.
 
 ---
 
-## LOẠI A — AIDA (13 section)
+## AIDA (13 section) — khung mặc định cho mọi landing chạy Ads
+
+Dưới đây là thứ tự của **A1**. Với **A2** (từ khoá nỗi sợ), giữ nguyên 13 section nhưng **đảo đầu trang**: hero gọi tên nỗi lo → section 2 là **câu trả lời thẳng** cho đúng nỗi lo đó → rồi mới tới trust và phần còn lại. Khối gỡ 3 rào cản (Sợ–Ngờ–Ngại) đẩy lên **ngay sau câu trả lời**.
 
 1. **Hero (70–90vh)** — headline nụ cười đẹp + subheadline + CTA chính + CTA phụ + trust badge + thống kê
 2. **Trust** — giấy phép Sở Y tế + **đối tác hãng** (Straumann · Invisalign · Nacera · Ormco) + báo chí
@@ -32,10 +46,12 @@ Chọn sai loại là nguyên nhân phổ biến nhất của **CTR ổn nhưng 
 
 ---
 
-## LOẠI B — PAS (13 section)
+## PAS (13 section) — chỉ cho SEO · GEO · social nguội
+
+> **Không dùng khung này cho landing chạy Google Ads.** Xem luật ở đầu file.
 
 1. **Hero** — gọi đúng **Vấn đề/nỗi đau** (mất răng · hô móm · răng ố…) + hứa hẹn giải pháp + CTA
-2. **Khoét sâu** — hệ quả nếu không xử lý: **tiêu xương · lệch khớp cắn · mất tự tin**
+2. **Khoét sâu** — hệ quả nếu không xử lý: **tiêu xương · lệch khớp cắn · mất tự tin**. Chỉ được khoét sâu ở đây, và vẫn **không gây hoang mang** — nêu hệ quả có thật, không vẽ thảm hoạ
 3. **Giải pháp** — phương pháp Paris giải quyết đúng vấn đề đó
 4. **Gỡ 3 rào cản (Sợ–Ngờ–Ngại)** ★ — giảm đau (Piezotome) · trụ/sứ **chính hãng** · BS chứng chỉ quốc tế · bảo hành · trả góp
 5. **Bằng chứng** — case thật **đúng vấn đề đó** + đối tác hãng
@@ -48,7 +64,7 @@ Chọn sai loại là nguyên nhân phổ biến nhất của **CTR ổn nhưng 
 12. **Booking CTA + form**
 13. **Footer**
 
-> Section 4 là trái tim của loại B. Làm hời hợt ở đây thì cả trang mất tác dụng.
+> Section 4 là trái tim của khung này. Làm hời hợt ở đây thì cả trang mất tác dụng.
 
 ---
 

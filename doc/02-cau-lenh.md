@@ -63,7 +63,7 @@ Xác định loại landing rồi dựng blueprint + copy.
 
 ## 3.2 Chỉ định rõ loại
 ```
-MODE 2 — landing loại B (PAS) cho "răng hô nên niềng hay bọc sứ".
+MODE 2 — landing A2 (trả lời trước) cho "răng hô nên niềng hay bọc sứ".
 Phần gỡ 3 rào cản viết kỹ, nhất là nỗi ngờ về mài răng thật.
 ```
 

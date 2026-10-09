@@ -80,7 +80,7 @@ CÂU NÓI NGUYÊN VĂN CỦA KHÁCH
 
 PATH: /boc-rang-su/dat-lich
 
-NHÃN: Nhóm "bọc sứ có hại không" | Giai đoạn 3 | Góc B (PAS) | Test: archetype 4
+NHÃN: Nhóm "bọc sứ có hại không" | Giai đoạn 3 | Góc B (nỗi đau) | Test: archetype 4
 ```
 
 ## 1.4 MẪU QC — Meta (biến thể 1)
@@ -123,7 +123,7 @@ TIÊU CHÍ                                   ĐIỂM
 | Lô | Đổi | Giữ nguyên | Đọc | Mục tiêu |
 |---|---|---|---|---|
 | T1 | 3 hook (archetype 4 · 1 · 5) | body · offer · visual | CTR | Tìm hook thắng |
-| T2 | Góc B ↔ A | hook thắng T1 | CTR + CVR | Xác nhận PAS đúng cho giai đoạn 3 |
+| T2 | Góc B ↔ A | hook thắng T1 | CTR + CVR | Xác nhận góc nỗi đau đúng cho giai đoạn 3 |
 | T3 | **Bằng chứng: hãng Nacera ↔ bác sĩ ĐH Y** | hook + góc thắng | CVR | Khách tin tên hãng hay tin bác sĩ hơn |
 | T4 | CTA: "kiểm tra online" ↔ "đặt lịch khám" | thân thắng | CPL + Booking | Micro-conversion có hạ CPL không |
 | T5 | Visual: mô hình răng ↔ bác sĩ | copy thắng | CTR + CPL | — |
@@ -145,7 +145,7 @@ TIÊU CHÍ                                   ĐIỂM
 # 2. MODE 2 — LDP-BUILD (trích)
 
 ```
-LOẠI LANDING: B (PAS)
+KHUNG LANDING: A2 — trả lời trước
 Lý do: intent xuất phát từ nỗi lo mất răng thật, không phải khát khao làm đẹp.
        Giai đoạn 3 — loại B mạnh nhất.
 

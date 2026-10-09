@@ -41,7 +41,7 @@ Khách nha khoa mua **chức năng + sự tự tin** — ăn nhai tốt lại, h
 | Mode | Làm gì | Input tối thiểu | Đầu ra |
 |---|---|---|---|
 | **1 · WIN-AD** | Từ từ khóa → mẫu QC Google RSA + Meta | từ khóa + dịch vụ | 15 headline + 4 description + 3–5 biến thể Meta + bảng chấm WIN + kế hoạch test |
-| **2 · LDP-BUILD** | Từ từ khóa → landing loại A hoặc B | cụm từ khóa + dịch vụ | blueprint 13 section + copy, hoặc HTML single-file theo **khung trang chuẩn** + Design System v3.1 |
+| **2 · LDP-BUILD** | Từ từ khóa → landing `A1`/`A2` (Ads) hoặc PAS (SEO/GEO) | cụm từ khóa + dịch vụ | blueprint 13 section + copy, hoặc HTML single-file theo **khung trang chuẩn** + Design System v3.1 |
 | **3 · LDP-ADVISOR** | Đọc ADS + GA → chẩn đoán | CTR·CPC·CPL·impression + scroll·form·booking | điểm nghẽn + 3 quyết định kèm ngưỡng và action |
 | **4 · KEYWORD-ZONE** | Từ 1 ZONE dịch vụ → bộ từ khóa theo chân dung + hành trình | tên ZONE + ngân sách/tháng | chân dung KH · hành trình S1–S6 · chiến dịch kèm tỷ trọng ngân sách · 90–130 từ khóa · phủ định |
 
@@ -69,7 +69,7 @@ Khách nha khoa mua **chức năng + sự tự tin** — ăn nhai tốt lại, h
 |---|---|---|---|
 | 1 **NHẬN BIẾT** | "là gì" · "răng xấu phải làm sao" | Giáo dục nhẹ, **chưa bán** | Không chạy LDP chốt |
 | 2 **TÌM HIỂU** | "loại nào tốt" · "nha khoa nào uy tín" | So sánh + USP chuẩn Pháp / đối tác hãng | A hoặc B |
-| 3 **CÂN NHẮC & NỖI SỢ** ★ | "có đau không" · "có hại không" · "trụ nào tốt" | **Gỡ nỗi sợ**: BS ĐH Y · hãng chính hãng · Piezotome · bảo hành | **Loại B (PAS)** |
+| 3 **CÂN NHẮC & NỖI SỢ** ★ | "có đau không" · "có hại không" · "trụ nào tốt" | **Gỡ nỗi sợ**: BS ĐH Y · hãng chính hãng · Piezotome · bảo hành | **A2 — trả lời trước** |
 | 4 **THỰC HIỆN** | "giá" · "ưu đãi" · **"trả góp"** · "đặt lịch" | Ưu đãi + trả góp + minh bạch chi phí | **Loại A** rút gọn |
 | 5 **HẬU ĐIỀU TRỊ** | "chăm sóc sau" · "siết niềng đau" | Hướng dẫn + trấn an | Trang CRM |
 | 6 **GẮN BÓ** | "khách cũ ưu đãi" · "nha khoa trẻ em" | Cross-sell + **gói gia đình** | **Loại A** |
@@ -187,7 +187,7 @@ Generator **chặn build** nếu: tổng tỷ trọng ngân sách ≠ 100% · t�
 
 > Sửa nội dung thì sửa JSON rồi build lại — **không sửa thẳng `.xlsx`**, lần build sau sẽ ghi đè.
 
-**Từ workbook sang landing page:** bảng Landing ở sheet 4 ghi sẵn *Loại khung (A/B) · Chặng · Chân dung · Rào cản gỡ chính* cho từng LP — đủ đầu vào cho [`prompts/prompt-build-landing-page.md`](prompts/prompt-build-landing-page.md). LDP mặc định **mobile-first, single-file HTML**. Hai nguồn tham chiếu, đừng lẫn: **khung trang · header · footer · nền · container** lấy từ trang production [`template/family-care.html`](template/family-care.html); **cách trình bày trên điện thoại** tham khảo `/trong-rang-implant-paris.html` — nhưng **cấu trúc nội dung lấy từ hành trình KH**, không copy khung nội dung của trang đó (trang đó chạy AIDA, phần lớn landing Implant phải là PAS).
+**Từ workbook sang landing page:** bảng Landing ở sheet 4 ghi sẵn *Loại khung (A/B) · Chặng · Chân dung · Rào cản gỡ chính* cho từng LP — đủ đầu vào cho [`prompts/prompt-build-landing-page.md`](prompts/prompt-build-landing-page.md). LDP mặc định **mobile-first, single-file HTML**. Hai nguồn tham chiếu, đừng lẫn: **khung trang · header · footer · nền · container** lấy từ trang production [`template/family-care.html`](template/family-care.html); **cách trình bày trên điện thoại** tham khảo `/trong-rang-implant-paris.html` — nhưng **cấu trúc nội dung lấy từ hành trình KH**, không copy khung nội dung của trang đó (trang đó chạy AIDA — **đúng**, vì landing chạy Ads thì luôn AIDA; cái phải lấy từ hành trình là nội dung từng section).
 
 ---
 
@@ -195,8 +195,8 @@ Generator **chặn build** nếu: tổng tỷ trọng ngân sách ≠ 100% · t�
 
 | File | Nội dung | Trạng thái |
 |---|---|---|
-| [SYSTEM-PROMPT.md](SYSTEM-PROMPT.md) | Bộ não — 18 mục · **21.032 ký tự** | ✅ |
-| [SYSTEM-PROMPT-NGAN.md](SYSTEM-PROMPT-NGAN.md) | Bản ngắn **7.959 ký tự** — chỉ cho **ChatGPT** · ⚠️ **chỉ dư 41 ký tự so với hạn mức 8.000, sửa phải đo lại** | ✅ |
+| [SYSTEM-PROMPT.md](SYSTEM-PROMPT.md) | Bộ não — 18 mục · **21.470 ký tự** | ✅ |
+| [SYSTEM-PROMPT-NGAN.md](SYSTEM-PROMPT-NGAN.md) | Bản ngắn **7.979 ký tự** — chỉ cho **ChatGPT** · ⚠️ **chỉ dư 21 ký tự so với hạn mức 8.000, sửa phải đo lại** | ✅ |
 | [knowledge/np-rao-phap-ly.md](knowledge/np-rao-phap-ly.md) | Từ cấm → từ đúng · **luật chữ "chính hãng"** · luật ảnh · HITL | ✅ |
 | [knowledge/np-ho-so-thuong-hieu.md](knowledge/np-ho-so-thuong-hieu.md) | Định vị · **bộ nhận diện: màu + font** · Design System v3.1 · đối tác hãng · bác sĩ · taxonomy *(module swappable)* | ✅ |
 | [knowledge/np-chan-dung-hanh-trinh.md](knowledge/np-chan-dung-hanh-trinh.md) | Insight · 3 rào cản đặc thù nha khoa · phễu 6 giai đoạn | ✅ |
