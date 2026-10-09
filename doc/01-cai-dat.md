@@ -26,30 +26,33 @@ Tối ưu quảng cáo nha khoa: sinh mẫu QC từ từ khóa, dựng landing p
 # 1. Cài lên nền tảng
 
 ## ChatGPT (Custom GPT) — ⚠ dùng BẢN NGẮN
-Ô **Instructions** giới hạn **8.000 ký tự**, mà `SYSTEM-PROMPT.md` dài **15.629 ký tự** → dán vào sẽ **bị cắt mất nửa sau** mà ChatGPT **không báo lỗi gì**.
+Ô **Instructions** giới hạn **8.000 ký tự**, mà `SYSTEM-PROMPT.md` dài hơn **20.000 ký tự** → dán vào sẽ **bị cắt mất nửa sau** mà ChatGPT **không báo lỗi gì**.
 
 1. Create a GPT → tab *Configure*.
 2. **Name** + **Description:** dán từ §0.
-3. **Instructions:** dán khối ▼▲ của [`SYSTEM-PROMPT-NGAN.md`](../SYSTEM-PROMPT-NGAN.md) (**7.952 ký tự**).
+3. **Instructions:** dán khối ▼▲ của [`SYSTEM-PROMPT-NGAN.md`](../SYSTEM-PROMPT-NGAN.md) (**7.959 ký tự**).
 4. **Knowledge:** upload **8 file** trong `knowledge/` **+ thêm cả `SYSTEM-PROMPT.md`**.
+5. Muốn Agent **tự xuất file Excel**: bật **Code Interpreter** ở mục *Capabilities*, và upload thêm `tools/build_keyword_workbook.py` + `zones/README.md` (nên có cả `zones/implant.json`).
 
-> ⚠️ **Bản ngắn chỉ dư 48 ký tự so với hạn mức.** Nếu bạn sửa bản ngắn, **phải đếm lại ký tự** trước khi dán — thêm một câu là vượt, và phần bị cắt sẽ là mục cuối (quy tắc phản hồi + tự kiểm).
+> ⚠️ **Bản ngắn chỉ dư 41 ký tự so với hạn mức.** Nếu bạn sửa bản ngắn, **phải đếm lại ký tự** trước khi dán — thêm một câu là vượt, và phần bị cắt sẽ là mục cuối (quy tắc phản hồi + tự kiểm).
 
 ## Gemini (Gems)
 1. Gem mới → **Tên** + **Nội dung mô tả** từ §0.
 2. **Chỉ dẫn:** dán khối ▼▲ của [`SYSTEM-PROMPT.md`](../SYSTEM-PROMPT.md) — bản đầy đủ.
 3. **Tri thức:** upload 8 file trong `knowledge/`.
+4. Muốn Agent **tự xuất file Excel**: upload thêm `tools/build_keyword_workbook.py` + `zones/README.md` (nên có cả `zones/implant.json`).
 
 ## Claude (Project)
 1. New project → tên từ §0.
 2. **Instructions:** dán khối ▼▲ của [`SYSTEM-PROMPT.md`](../SYSTEM-PROMPT.md) — bản đầy đủ.
 3. **Project knowledge:** add 8 file trong `knowledge/`.
+4. Muốn Agent **tự xuất file Excel**: add thêm `tools/build_keyword_workbook.py` + `zones/README.md` (nên có cả `zones/implant.json`).
 
-| Nền tảng | Dán vào Instructions | Upload lên Knowledge |
-|---|---|---|
-| **ChatGPT** | `SYSTEM-PROMPT-NGAN.md` (7.959) | 8 file `knowledge/` **+ `SYSTEM-PROMPT.md`** |
-| **Gemini** | `SYSTEM-PROMPT.md` (20.711) | 8 file `knowledge/` |
-| **Claude** | `SYSTEM-PROMPT.md` (20.711) | 8 file `knowledge/` |
+| Nền tảng | Dán vào Instructions | Upload lên Knowledge | Để Agent tự xuất `.xlsx` |
+|---|---|---|---|
+| **ChatGPT** | `SYSTEM-PROMPT-NGAN.md` (7.959) | 8 file `knowledge/` **+ `SYSTEM-PROMPT.md`** | bật **Code Interpreter** + upload `tools/build_keyword_workbook.py`, `zones/README.md` |
+| **Gemini** | `SYSTEM-PROMPT.md` (21.032) | 8 file `knowledge/` | upload `tools/build_keyword_workbook.py`, `zones/README.md` |
+| **Claude** | `SYSTEM-PROMPT.md` (21.032) | 8 file `knowledge/` | add `tools/build_keyword_workbook.py`, `zones/README.md` |
 
 ---
 

@@ -128,7 +128,7 @@ pip install openpyxl
 python tools/build_keyword_workbook.py zones/implant.json
 ```
 
-Tạo zone mới: dán prompt trong [`prompts/prompt-sinh-bo-tu-khoa-zone.md`](prompts/prompt-sinh-bo-tu-khoa-zone.md), lưu JSON vào `zones/`, chạy lại lệnh trên.
+**Cách nhanh nhất — để Agent tự xuất file:** upload `tools/build_keyword_workbook.py` + `zones/README.md` vào Knowledge, bật công cụ chạy code, rồi dán prompt §1 trong [`prompts/prompt-sinh-bo-tu-khoa-zone.md`](prompts/prompt-sinh-bo-tu-khoa-zone.md) — Agent sinh JSON, chạy generator và trả luôn file `.xlsx`. Cách chạy trên máy ở trên vẫn là cách duy nhất **tái lập được** bộ từ khoá và theo dõi thay đổi qua git.
 
 Generator **chặn build** nếu: tổng tỷ trọng ngân sách ≠ 100% · từ khóa trỏ tới chiến dịch/landing/chân dung chưa khai báo · có Broad match · trùng từ khóa × kiểu khớp · thông điệp chứa **từ cấm quảng cáo y tế**.
 
@@ -142,7 +142,7 @@ Generator **chặn build** nếu: tổng tỷ trọng ngân sách ≠ 100% · t�
 
 | File | Nội dung | Trạng thái |
 |---|---|---|
-| [SYSTEM-PROMPT.md](SYSTEM-PROMPT.md) | Bộ não — 18 mục · **20.711 ký tự** | ✅ |
+| [SYSTEM-PROMPT.md](SYSTEM-PROMPT.md) | Bộ não — 18 mục · **21.032 ký tự** | ✅ |
 | [SYSTEM-PROMPT-NGAN.md](SYSTEM-PROMPT-NGAN.md) | Bản ngắn **7.959 ký tự** — chỉ cho **ChatGPT** · ⚠️ **chỉ dư 41 ký tự so với hạn mức 8.000, sửa phải đo lại** | ✅ |
 | [knowledge/np-rao-phap-ly.md](knowledge/np-rao-phap-ly.md) | Từ cấm → từ đúng · **luật chữ "chính hãng"** · luật ảnh · HITL | ✅ |
 | [knowledge/np-ho-so-thuong-hieu.md](knowledge/np-ho-so-thuong-hieu.md) | Định vị · **bộ nhận diện: màu + font** · Design System v3.1 · đối tác hãng · bác sĩ · taxonomy *(module swappable)* | ✅ |
@@ -155,7 +155,7 @@ Generator **chặn build** nếu: tổng tỷ trọng ngân sách ≠ 100% · t�
 | [tools/build_keyword_workbook.py](tools/build_keyword_workbook.py) | Generator: 1 zone JSON → 1 file `.xlsx` 5 sheet, kèm cổng kiểm tra | ✅ |
 | [zones/README.md](zones/README.md) | Schema 17 khối của zone config · trật tự điền bắt buộc | ✅ |
 | [zones/implant.json](zones/implant.json) | ZONE Implant hoàn chỉnh: 6 chân dung · 11 chiến dịch · 123 từ khoá | ✅ |
-| [prompts/prompt-sinh-bo-tu-khoa-zone.md](prompts/prompt-sinh-bo-tu-khoa-zone.md) | 6 prompt mẫu: tạo zone ra **JSON** · tạo zone ra **5 bảng** (không cần script) · ngắn · mở rộng · rà soát · đổi brand | ✅ |
+| [prompts/prompt-sinh-bo-tu-khoa-zone.md](prompts/prompt-sinh-bo-tu-khoa-zone.md) | **Prompt chính: Agent tự xuất file `.xlsx` ngay trong phiên** · ngắn · mở rộng · rà soát · dự phòng ra bảng | ✅ |
 | [prompts/prompt-build-landing-page.md](prompts/prompt-build-landing-page.md) | 5 prompt mẫu dựng LDP **mobile-first** từ sheet 4 Hành trình KH · checklist giao hàng | ✅ |
 | [prompts/prompt-quy-trinh-tron-goi.md](prompts/prompt-quy-trinh-tron-goi.md) | **Dây chuyền 6 bước**: từ khóa → ưu tiên → insight → mẫu QC → layout → HTML · 3 chốt dừng | ✅ |
 | [template/NKP _ Google Ads _ Bộ từ khoá Trồng răng Implant.xlsx](template/) | **File mẫu gốc** của workbook 5 sheet — generator dựng lại đúng file này | 📦 |
