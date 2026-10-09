@@ -163,7 +163,7 @@ Generator **chặn build** nếu: tổng tỷ trọng ngân sách ≠ 100% · t�
 | [doc/01-cai-dat.md](doc/01-cai-dat.md) | Tên & mô tả · cài 3 nền tảng · smoke test · xử lý sự cố | ✅ |
 | [doc/02-cau-lenh.md](doc/02-cau-lenh.md) | Câu lệnh 3 mode · prompt mẫu · điều Agent sẽ từ chối | ✅ |
 | [doc/03-output-mau.md](doc/03-output-mau.md) | Output mẫu đủ 3 mode · dấu hiệu đúng/sai | ✅ |
-| [doc/04-prompt-nguoi-moi.md](doc/04-prompt-nguoi-moi.md) | 10 prompt cho người không chuyên ads | ✅ |
+| [doc/04-prompt-nguoi-moi.md](doc/04-prompt-nguoi-moi.md) | **21 prompt chia 7 nhóm — phủ hết việc Agent làm được**, cho người không chuyên ads | ✅ |
 | [doc/CHANGELOG.md](doc/CHANGELOG.md) | Lịch sử · việc còn treo | ✅ |
 | [doc/v1-ban-goc-1-file.md](doc/v1-ban-goc-1-file.md) | Bản gốc v1.3 một file — lưu để đối chiếu, **không dùng để cài** | 📦 |
 
