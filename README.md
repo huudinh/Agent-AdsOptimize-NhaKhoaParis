@@ -1,6 +1,6 @@
 # 🦷 ADS OPTIMIZE — Tối ưu quảng cáo hiệu suất (Nha khoa Paris)
 
-> Version 2.3 · AI **sinh mẫu quảng cáo win · dựng landing page · chẩn đoán số liệu ADS + GA** cho **Hệ thống Nha khoa Tiêu chuẩn Pháp đầu tiên tại Việt Nam** — làm theo chỉ số, không làm theo cảm tính.
+> Version 2.4 · AI **sinh mẫu quảng cáo win · dựng landing page · chẩn đoán số liệu ADS + GA · dựng bộ từ khoá và tự xuất file Excel** cho **Hệ thống Nha khoa Tiêu chuẩn Pháp đầu tiên tại Việt Nam** — làm theo chỉ số, không làm theo cảm tính.
 
 Theo công thức HCI **R·M·K·W·O**. Kiến trúc **BRAIN brand-neutral** ([`SYSTEM-PROMPT.md`](SYSTEM-PROMPT.md)) + **MODULE thương hiệu tách riêng** ([`knowledge/np-ho-so-thuong-hieu.md`](knowledge/np-ho-so-thuong-hieu.md)) → đổi brand chỉ cần thay module.
 
@@ -78,6 +78,56 @@ Khách nha khoa mua **chức năng + sự tự tin** — ăn nhai tốt lại, h
 
 ---
 
+## Bộ nhận diện & khung trang — bắt buộc khi dựng landing
+
+**Ba màu gốc** (bộ nhận diện thương hiệu, mục 4.1):
+
+| | Mã | Dùng cho |
+|---|---|---|
+| **Cerulean Blue** | `#2A52BE` | màu chủ đạo · tiêu đề · viền · nền navy đậm |
+| **Pantone Red 032 C** | `#ED2E38` | nút chính · text giá · điểm nhấn |
+| **White** | `#FFFFFF` | nền chính |
+
+> ⚠️ Bản brand book ghi WHITE là RGB **237,255,255** — đó là `#EDFFFF`, màu xanh nhạt. Giá trị đúng của trắng là **255,255,255**. Tri thức dùng giá trị đúng.
+
+**Design System Paris v3.1** — thang màu đầy đủ **lấy nguyên từ trang production** [`template/family-care.html`](template/), không tự dẫn xuất:
+
+```css
+--blue:#2A52BE; --blue-dark:#152F73; --blue-deep:#0C1D4D;
+--blue-light:#EAF0FC; --blue-mid:#D7E2FA;
+--red:#ED2E38;  --red-dark:#C11B26;  --red-light:#FDEAEB;
+--cream:#FBF8F3; --paper:#FFFFFF;
+--ink:#131A2E;   --ink-soft:#4A5270;
+--gold:#C9A24B;  --line:#E4E1D8;  --radius:22px;
+```
+
+Tỷ lệ **80% trắng/kem · 15% xanh · 5% đỏ** — cảm hứng cờ Pháp, **không nền toàn xanh**.
+
+**Ba rào tương phản đã đo** (WCAG): chữ trắng trên `--red` chỉ 4,16:1 → phải **≥16px đậm** · `--gold` trên trắng 2,40:1 → **chỉ dùng trên navy** · ⛔ **đỏ trên nền xanh 1,66:1 — cấm**.
+
+**Hai font, theo đúng production:** heading `h1 h2 h3` dùng **Bricolage Grotesque 700**; body, nút, form dùng **Be Vietnam Pro** 400/600/700/800. Body ≥16px, line-height 150%. **Không nạp font thứ ba** — cần nhấn thì đổi weight.
+
+**Khung trang** — mọi landing phải khớp khung này:
+
+```
+body nền #DCE3EE
+ └ .device-shell  rộng tối đa 460px, nền trắng, shadow
+    ├ .topbar      logo
+    ├ hero + .tricolor   xanh / trắng / đỏ
+    ├ section …    nền XEN KẼ .bg-white ↔ .bg-cream
+    ├ .footer.bg-navy    logo trắng · hotline · dòng cơ sở
+    ├ .legal #0A1840     link chính sách + dòng pháp lý, padding-bottom 110px
+    └ .sticky-bar  fixed, 460px khớp container, logo + 1 CTA đỏ
+```
+
+Hai chi tiết bỏ là hỏng: `.legal` phải giữ `padding-bottom:110px` (bỏ là thanh CTA che mất dòng pháp lý) · `.sticky-bar` phải cùng `max-width:460px` với container (lệch là nó chạy hết màn hình trên desktop).
+
+**Chưa có ảnh thật → dựng ô ảnh tạm**, tuyệt đối **không ảnh stock, không ảnh AI, không `<img>` trỏ URL không tồn tại**: khối viền đứt giữ đúng `aspect-ratio`, bên trong ghi tỉ lệ + **nội dung ảnh cần cấp** + điều kiện pháp lý. Cuối mỗi trang kèm **bảng kê ảnh cần cấp** (section · tỉ lệ · nội dung · ai duyệt) — thiếu bảng này là chưa giao xong.
+
+Chi tiết đầy đủ: [`knowledge/np-khung-landing.md`](knowledge/np-khung-landing.md) · [`knowledge/np-ho-so-thuong-hieu.md`](knowledge/np-ho-so-thuong-hieu.md).
+
+---
+
 ## Hai cổng chặn không được bỏ qua
 
 **① Cổng WIN 2/3** — từ khóa chưa đạt thì không sản xuất nội dung.
@@ -85,12 +135,15 @@ Khách nha khoa mua **chức năng + sự tự tin** — ăn nhai tốt lại, h
 
 ---
 
-## Quick start (4 bước)
+## Quick start (5 bước)
 
 1. Tạo 1 Project / GPT / Gem mới. Tên và mô tả ngắn: xem [`doc/01-cai-dat.md` §0](doc/01-cai-dat.md).
 2. **Instructions:** dán khối ▼▲ trong [`SYSTEM-PROMPT.md`](SYSTEM-PROMPT.md) — riêng **ChatGPT** dùng [`SYSTEM-PROMPT-NGAN.md`](SYSTEM-PROMPT-NGAN.md).
 3. **Knowledge:** upload 8 file `.md` trong [`knowledge/`](knowledge/).
-4. Gọi mode: `MODE 1` · `MODE 2` · `MODE 3` · `MODE 4` — hoặc cứ nói bằng lời thường.
+4. **Muốn Agent tự xuất file Excel:** upload thêm [`tools/build_keyword_workbook.py`](tools/build_keyword_workbook.py) + [`zones/README.md`](zones/README.md) và bật công cụ chạy code (ChatGPT: **Code Interpreter**).
+5. Gọi mode: `MODE 1` · `MODE 2` · `MODE 3` · `MODE 4` — hoặc cứ nói bằng lời thường.
+
+**Chưa quen thuật ngữ ads?** [`doc/04-prompt-nguoi-moi.md`](doc/04-prompt-nguoi-moi.md) có **21 câu lệnh chia 7 nhóm**, phủ hết việc Agent làm được, mỗi câu kèm *nhận được gì* và *vì sao*.
 
 **Câu lệnh mẫu:**
 ```
@@ -134,7 +187,7 @@ Generator **chặn build** nếu: tổng tỷ trọng ngân sách ≠ 100% · t�
 
 > Sửa nội dung thì sửa JSON rồi build lại — **không sửa thẳng `.xlsx`**, lần build sau sẽ ghi đè.
 
-**Từ workbook sang landing page:** bảng Landing ở sheet 4 ghi sẵn *Loại khung (A/B) · Chặng · Chân dung · Rào cản gỡ chính* cho từng LP — đủ đầu vào cho [`prompts/prompt-build-landing-page.md`](prompts/prompt-build-landing-page.md). LDP mặc định **mobile-first, single-file HTML**, tham chiếu trình bày từ `/trong-rang-implant-paris.html` nhưng **cấu trúc nội dung lấy từ hành trình KH**, không copy khung của trang đó.
+**Từ workbook sang landing page:** bảng Landing ở sheet 4 ghi sẵn *Loại khung (A/B) · Chặng · Chân dung · Rào cản gỡ chính* cho từng LP — đủ đầu vào cho [`prompts/prompt-build-landing-page.md`](prompts/prompt-build-landing-page.md). LDP mặc định **mobile-first, single-file HTML**. Hai nguồn tham chiếu, đừng lẫn: **khung trang · header · footer · nền · container** lấy từ trang production [`template/family-care.html`](template/family-care.html); **cách trình bày trên điện thoại** tham khảo `/trong-rang-implant-paris.html` — nhưng **cấu trúc nội dung lấy từ hành trình KH**, không copy khung nội dung của trang đó (trang đó chạy AIDA, phần lớn landing Implant phải là PAS).
 
 ---
 
