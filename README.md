@@ -155,7 +155,7 @@ Generator **chặn build** nếu: tổng tỷ trọng ngân sách ≠ 100% · t�
 | [tools/build_keyword_workbook.py](tools/build_keyword_workbook.py) | Generator: 1 zone JSON → 1 file `.xlsx` 5 sheet, kèm cổng kiểm tra | ✅ |
 | [zones/README.md](zones/README.md) | Schema 17 khối của zone config · trật tự điền bắt buộc | ✅ |
 | [zones/implant.json](zones/implant.json) | ZONE Implant hoàn chỉnh: 6 chân dung · 11 chiến dịch · 123 từ khoá | ✅ |
-| [prompts/prompt-sinh-bo-tu-khoa-zone.md](prompts/prompt-sinh-bo-tu-khoa-zone.md) | 5 prompt mẫu: tạo zone · mở rộng · rà soát · đổi brand | ✅ |
+| [prompts/prompt-sinh-bo-tu-khoa-zone.md](prompts/prompt-sinh-bo-tu-khoa-zone.md) | 6 prompt mẫu: tạo zone ra **JSON** · tạo zone ra **5 bảng** (không cần script) · ngắn · mở rộng · rà soát · đổi brand | ✅ |
 | [prompts/prompt-build-landing-page.md](prompts/prompt-build-landing-page.md) | 5 prompt mẫu dựng LDP **mobile-first** từ sheet 4 Hành trình KH · checklist giao hàng | ✅ |
 | [prompts/prompt-quy-trinh-tron-goi.md](prompts/prompt-quy-trinh-tron-goi.md) | **Dây chuyền 6 bước**: từ khóa → ưu tiên → insight → mẫu QC → layout → HTML · 3 chốt dừng | ✅ |
 | [template/NKP _ Google Ads _ Bộ từ khoá Trồng răng Implant.xlsx](template/) | **File mẫu gốc** của workbook 5 sheet — generator dựng lại đúng file này | 📦 |

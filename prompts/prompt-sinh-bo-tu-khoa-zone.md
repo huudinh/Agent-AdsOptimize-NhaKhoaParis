@@ -1,6 +1,11 @@
 # PROMPT MẪU — sinh bộ từ khoá Google Ads cho 1 ZONE
 
-Agent trả về **file JSON** theo schema `zones/README.md`. Người dùng lưu vào `zones/<ma>.json` rồi chạy:
+Hai đường ra, chọn theo việc bạn có chạy script hay không:
+
+| | Prompt | Nhận được |
+|---|---|---|
+| **Có người biết Python** | §1 (hoặc §3 khi đã quen) | **JSON** → chạy generator → file `.xlsx` 5 sheet **có công thức** |
+| **Không chạy script** | **§2** | **5 bảng ngay trong chat**, dán sang Excel hoặc Google Sheets |
 
 ```bash
 python tools/build_keyword_workbook.py zones/<ma>.json
@@ -75,7 +80,81 @@ XUẤT RA: đúng 1 khối JSON hợp lệ theo schema zones/README.md, không k
 
 ---
 
-## 2 · PROMPT NGẮN — khi đã quen
+## 2 · PROMPT ĐẦY ĐỦ — xuất thẳng 5 BẢNG, không cần JSON/Python
+
+> Dùng khi bạn **không chạy script**: Agent trả bảng ngay trong chat, bạn dán sang
+> Excel hoặc Google Sheets. Cột của Bảng 2 đặt đúng thứ tự sheet `2. Bộ từ khoá`
+> của file mẫu nên dán vào là khớp luôn.
+
+```
+Áp phương pháp luận MARKETING LẤY KHÁCH HÀNG LÀM TRUNG TÂM để dựng bộ từ khoá
+Google Ads cho Nha khoa Paris. Xuất ra BẢNG, không xuất JSON.
+
+ZONE:      [Niềng răng Invisalign]
+NGÂN SÁCH: [150.000.000 VND/tháng]
+
+Đọc trước, theo đúng thứ tự:
+  knowledge/np-rao-phap-ly.md           - từ cấm, luật chữ "chính hãng"
+  knowledge/np-ho-so-thuong-hieu.md     - USP, đối tác hãng, bác sĩ, taxonomy
+  knowledge/np-chan-dung-hanh-trinh.md  - 3 rào cản SỢ/NGỜ/NGẠI, phễu 6 giai đoạn
+  knowledge/np-cong-win-tu-khoa.md      - cổng WIN 2/3, cách gom nhóm
+  knowledge/np-ppl-kh-trung-tam.md      - ZONE → chân dung → S1-S6 → cụm ưu tiên
+
+CÁCH XUẤT — QUAN TRỌNG: ra LẦN LƯỢT từng bảng, xong một bảng thì DỪNG và hỏi
+"tiếp bảng sau?". Đừng dồn cả 5 bảng vào một lượt trả lời — sẽ bị cắt giữa bảng
+và tôi phải làm lại từ đầu.
+
+BẢNG 1 — CHÂN DUNG KHÁCH (4-7 nhóm)
+  Mã | Tên nhóm | Ai gõ Google | Nỗi đau thật | Rào cản chốt (SỢ/NGỜ/NGẠI) | Bằng chứng gỡ
+  Insight phải là NỖI ĐAU THẬT, không phải mô tả nhân khẩu học. Người gõ Google
+  khác người điều trị (con tìm cho bố mẹ, vợ tìm cho chồng) thì ghi rõ — thông
+  điệp viết cho NGƯỜI MUA HỘ.
+
+BẢNG 2 — HÀNH TRÌNH S1-S6
+  Chặng | Chân dung chính | Tâm lý | Rào cản | Bằng chứng BẮT BUỘC có | Landing | Chuyển đổi đo lường | KPI
+  S1 và S5 không chạy landing chốt.
+
+BẢNG 3 — CHIẾN DỊCH & NGÂN SÁCH
+  Tên chiến dịch | Chặng | Cụm truy vấn | Tỷ trọng % | Số tiền/tháng | Lý do được tỷ trọng này
+  Tên theo mẫu: NKP | <chặng> | <cụm truy vấn>
+  Chia theo Ý ĐỊNH MUA × GIÁ TRỊ CA, KHÔNG chia theo lượng tìm kiếm. Tổng đúng 100%.
+  S3 (Cân nhắc & nỗi sợ) tối thiểu 10% — chặng quyết định của ngành nha, cạnh tranh thấp.
+
+BẢNG 4 — BỘ TỪ KHOÁ (60-120 dòng), đúng 16 cột theo thứ tự này:
+  STT | Chiến dịch | Nhóm quảng cáo | Từ khoá | Kiểu khớp | Ưu tiên | Chặng hành trình |
+  Chân dung KH | Rào cản chốt | Cạnh tranh dự kiến | Cổng WIN (/3) | Landing page |
+  Thông điệp / CTA chính | Lượng tìm kiếm/tháng | CPC đề xuất VND | Ghi chú vận hành
+  - Chỉ Exact và Phrase. KHÔNG Broad.
+  - Hai cột "Lượng tìm kiếm" và "CPC" để TRỐNG — số đó lấy từ Keyword Planner,
+    bịa ra là sai nguy hiểm vì sẽ dùng để chia tiền.
+  - Từ khoá đầu ngành (cạnh tranh rất cao, intent loãng) chấm 1/3: vẫn giữ để hứng
+    volume nhưng để P2/P3 và ghi rõ quy tắc cắt ở cột ghi chú.
+  - Dồn vào 3 ngách Paris đang có lợi thế: từ khoá NỖI SỢ · từ khoá TÊN HÃNG đối tác
+    · từ khoá TÌNH HUỐNG cụ thể.
+  Ra 25-30 dòng mỗi lượt rồi dừng, tôi gõ "tiếp" để lấy phần sau.
+
+BẢNG 5 — TỪ KHOÁ PHỦ ĐỊNH
+  Phủ định chung | Phủ định chéo (truy vấn → đẩy về chiến dịch nào)
+  Phủ định chéo để ĐIỀU HƯỚNG truy vấn về đúng chiến dịch, không phải để loại khách.
+
+SAU 5 BẢNG: ngưỡng cắt, lộ trình 3 pha, kế hoạch A/B, rủi ro.
+
+RÀNG BUỘC KHÔNG ĐƯỢC VI PHẠM:
+  - Không dùng: tốt nhất, số 1, duy nhất, không đau 100%, cam kết thành công,
+    khỏi 100%, đẹp tuyệt đối, vĩnh viễn. Không hứa thời gian điều trị cứng.
+  - Chữ "chính hãng" CHỈ dùng cho Straumann (Implant), Invisalign, Nacera, Ormco.
+  - Không bịa giá, ưu đãi, số ca, %, tên bác sĩ, tên cơ sở, review.
+    Chưa chắc thì ghi [CHỜ CẬP NHẬT].
+  - Không nêu tên đối thủ trong thông điệp quảng cáo.
+  - Mọi lời hứa phải dẫn được 1 bằng chứng kiểm chứng được.
+```
+
+**Muốn file `.xlsx` có sẵn công thức** thì dùng prompt §1 để lấy JSON rồi chạy generator —
+bảng dán tay không có mô hình phễu tự tính của sheet 1.
+
+---
+
+## 3 · PROMPT NGẮN — khi đã quen
 
 ```
 Sinh zone JSON cho [tên zone], ngân sách [X]/tháng, theo schema zones/README.md.
@@ -87,7 +166,7 @@ Chỉ xuất JSON.
 
 ---
 
-## 3 · PROMPT BỔ SUNG — mở rộng zone đã có
+## 4 · PROMPT BỔ SUNG — mở rộng zone đã có
 
 ```
 Đọc zones/implant.json. Thêm [20] từ khoá cho chân dung [CD4 - mất răng lâu năm,
@@ -98,7 +177,7 @@ Không trùng cặp (từ khoá × kiểu khớp) đã có trong file.
 
 ---
 
-## 4 · PROMPT RÀ SOÁT — trước khi giao team chạy ads
+## 5 · PROMPT RÀ SOÁT — trước khi giao team chạy ads
 
 ```
 Đọc zones/<ma>.json và rà soát theo 6 câu hỏi, trả lời từng câu kèm dẫn chứng dòng:
@@ -115,7 +194,7 @@ Không trùng cặp (từ khoá × kiểu khớp) đã có trong file.
 
 ---
 
-## 5 · PROMPT ĐỔI THƯƠNG HIỆU
+## 6 · PROMPT ĐỔI THƯƠNG HIỆU
 
 Bộ não brand-neutral, module thương hiệu tách riêng — đổi brand chỉ cần thay 2 file knowledge.
 
